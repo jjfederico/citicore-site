@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Citicore Properties acquires, develops, manages and brokers multifamily, mixed-use and commercial real estate across Massachusetts and southern New Hampshire.">
+<link rel="icon" type="image/png" sizes="32x32" href="images/citicore-icon-32.png">
+<link rel="apple-touch-icon" href="images/citicore-icon-180.png">
+<meta property="og:title" content="Citicore Properties">
+<meta property="og:description" content="Acquisitions, management and brokerage across Massachusetts and southern New Hampshire.">
+<meta property="og:image" content="https://citicoreprops.com/images/citicore-social-share.png">
+<meta property="og:url" content="https://citicoreprops.com/">
+<meta name="twitter:card" content="summary_large_image">
+<title>Citicore Properties</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Archivo:wdth,wght@100..125,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { 950: '#131B24', 900: '#1A2430', 800: '#23303E', 700: '#33424F' },
+          stone: { 50: '#FFFFFF', 100: '#F2F4F7', 300: '#D8DEE5', 500: '#66707C', 700: '#3B4550' },
+          brass: { 300: '#A7B4C2', 400: '#E6EAEF', 500: '#FFFFFF', 600: '#1A2430' },
+          steel: { 400: '#8A95A1', 500: '#66707C' },
+          // "green" token = the blue accent (rename when componentized)
+          green: { 300: '#9DBDE0', 600: '#2E6096', 700: '#234C78' }
+        },
+        fontFamily: {
+          display: ['Outfit', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
+          mono: ['"IBM Plex Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace']
+        },
+        maxWidth: { site: '76rem' }
+      }
+    }
+  }
+</script>
+<style>
+  :root { color-scheme: light; }
+  html { scroll-behavior: smooth; }
+  body { background: #FFFFFF; color: #1A2430; font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 16px; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  .font-display { font-weight: 600; letter-spacing: -0.02em; }
+  h1.font-display { font-weight: 700; letter-spacing: -0.03em; }
+  .font-display em { font-style: normal; }
+  .eyebrow { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; }
+  .num { font-variant-numeric: tabular-nums lining-nums; }
+  .wrap { max-width: 76rem; margin-inline: auto; padding-inline: 1.25rem; }
+  @media (min-width: 768px) { .wrap { padding-inline: 2.5rem; } }
+  .site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40; }
+  .grid-lines { background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 64px 64px; }
+  .link-u { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size .3s ease; }
+  .link-u:hover, .link-u:focus-visible { background-size: 100% 1px; }
+  .pillar { transition: background-color .3s ease, border-color .3s ease; }
+  .pillar:hover { background-color: #fff; border-color: #111111; }
+  .pillar .arrow { transition: transform .3s ease; }
+  .pillar:hover .arrow { transform: translateX(4px); }
+  .asset-card .elev { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+  .asset-card:hover .elev { transform: scale(1.03); }
+  :focus-visible { outline: 2px solid #8A8A8A; outline-offset: 3px; }
+  .field { width: 100%; background: transparent; border: 0; border-bottom: 1px solid rgba(201,206,214,.35); color: #FFFFFF; padding: .7rem 0; font-size: .95rem; border-radius: 0; }
+  .field::placeholder { color: #8A8A8A; }
+  .field:focus { outline: none; border-bottom-color: #FFFFFF; }
+  select.field option { color: #111111; }
+  .rise { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
+  .rise-2 { animation-delay: .12s; } .rise-3 { animation-delay: .24s; } .rise-4 { animation-delay: .36s; }
+  @keyframes rise { from { transform: translateY(14px); } to { transform: none; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+<!-- ============ HEADER ============ -->
+<header class="site-header bg-navy-950/95 backdrop-blur border-b border-white/10">
+  <div class="wrap flex items-center justify-between h-16 md:h-20">
+    <a href="#top" class="flex items-center shrink-0" aria-label="Citicore Properties home">
+      <span class="logo2b" style="display:inline-block;line-height:1;color:#F5F6F7;text-align:center"><span style="display:block;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 125;font-weight:750;font-size:1.25rem;letter-spacing:.02em;white-space:nowrap"><svg style="display:inline-block;height:.686em;width:auto;vertical-align:baseline;margin-right:.06em;overflow:visible" viewBox="0 0 38 40" aria-hidden="true"><path fill="currentColor" d="M0 0h38v10H10v20h28v10H0z"/><rect x="17" y="18" width="9" height="22" fill="currentColor"/></svg>ITICORE</span><span style="display:block;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 125;font-weight:450;font-size:.4rem;letter-spacing:.62em;margin-top:.45em;padding-left:.62em">PROPERTIES</span></span>
+    </a>
+    <nav aria-label="Primary" class="hidden lg:flex items-center gap-6 text-sm text-stone-300">
+      <a href="#acquisitions" class="link-u hover:text-stone-50">Acquisitions</a>
+      <a href="#management" class="link-u hover:text-stone-50">Management</a>
+      <a href="#brokerage" class="link-u hover:text-stone-50">Brokerage</a>
+      <a href="#portfolio" class="link-u hover:text-stone-50">Projects</a>
+      <a href="#team" class="link-u hover:text-stone-50">Team</a>
+      <a href="#contact" class="link-u hover:text-stone-50">Contact</a>
+    </nav>
+    <a href="#submit" class="hidden sm:inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold px-5 py-2.5 transition-colors">Submit a Deal</a>
+    <button id="menuBtn" class="lg:hidden text-stone-50 p-2 -mr-2" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+    </button>
+  </div>
+  <nav id="mobileNav" aria-label="Mobile" class="lg:hidden border-t border-white/10 bg-navy-950" hidden>
+    <div class="wrap py-4 flex flex-col text-stone-100">
+      <a href="#acquisitions" class="py-3 border-b border-white/5">Acquisitions</a>
+      <a href="#management" class="py-3 border-b border-white/5">Management</a>
+      <a href="#brokerage" class="py-3 border-b border-white/5">Brokerage</a>
+      <a href="#portfolio" class="py-3 border-b border-white/5">Projects</a>
+      <a href="#team" class="py-3 border-b border-white/5">Team</a>
+      <a href="#contact" class="py-3 border-b border-white/5">Contact</a>
+      <a href="#submit" class="mt-4 bg-green-600 text-white font-semibold text-center py-3">Submit a Deal</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="relative bg-navy-900 text-stone-50 overflow-hidden">
+  <div class="absolute inset-0 grid-lines" aria-hidden="true"></div>
+  <div class="wrap relative grid lg:grid-cols-12 gap-12 pt-16 pb-14 md:pt-24 md:pb-20">
+    <div class="lg:col-span-7">
+      <p class="eyebrow text-green-300 rise">Massachusetts &nbsp;·&nbsp; Southern New Hampshire</p>
+      <h1 class="font-display text-[2.6rem] leading-[1.05] sm:text-6xl lg:text-[4.4rem] mt-6 rise rise-2">
+        Institutional discipline.<br><em class="text-brass-300 font-medium">Long-term ownership.</em>
+      </h1>
+      <p class="mt-7 text-lg text-stone-300 max-w-[36rem] leading-relaxed rise rise-3">
+        Citicore Properties acquires, develops and operates multifamily, mixed-use and commercial real estate across Massachusetts and southern New Hampshire. Acquisitions, construction, management and brokerage run under one roof, through our brokerage arm Grove Property Group.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4 rise rise-4">
+        <a href="#submit" class="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white font-semibold px-7 py-4 transition-colors">
+          Submit an Off-Market Deal
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <a href="#criteria" class="inline-flex items-center gap-3 border border-white/25 hover:border-green-300 text-stone-50 px-7 py-4 transition-colors">View Acquisition Criteria</a>
+      </div>
+    </div>
+    <!-- Hero photo -->
+    <figure class="lg:col-span-5 relative">
+      <div class="border border-white/10 bg-navy-800 p-2">
+        <img src="images/hero-178-l.jpg" alt="Renovated three-family on L Street, South Boston" width="1600" height="1280" class="block w-full h-auto">
+      </div>
+      <figcaption class="mt-3 flex justify-between eyebrow text-[0.62rem] text-stone-500">
+        <span>L Street · South Boston</span><span class="text-brass-400">Sold</span>
+      </figcaption>
+    </figure>
+  </div>
+
+  <!-- PROOF BAR — how we work, no volume claims -->
+  <div class="relative border-t border-white/10 bg-navy-950/70">
+    <dl class="wrap grid grid-cols-2 lg:grid-cols-4">
+      <div class="py-8 pr-6 border-r border-white/10">
+        <dt class="font-display text-2xl md:text-3xl">Straightforward</dt>
+        <dd class="text-sm text-stone-300 mt-2 leading-relaxed">Clean terms and no surprises late in the deal.</dd>
+      </div>
+      <div class="py-8 px-6 lg:border-r border-white/10">
+        <dt class="font-display text-2xl md:text-3xl">Direct</dt>
+        <dd class="text-sm text-stone-300 mt-2 leading-relaxed">You talk to the people who make the decision.</dd>
+      </div>
+      <div class="py-8 pr-6 lg:px-6 border-r border-t lg:border-t-0 border-white/10">
+        <dt class="font-display text-2xl md:text-3xl">Discreet</dt>
+        <dd class="text-sm text-stone-300 mt-2 leading-relaxed">Off-market conversations stay off-market.</dd>
+      </div>
+      <div class="py-8 px-6 border-t lg:border-t-0 border-white/10">
+        <dt class="font-display text-2xl md:text-3xl">Local</dt>
+        <dd class="text-sm text-stone-300 mt-2 leading-relaxed">Based in South Boston. Buying across Massachusetts and southern New Hampshire.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ POSITIONING ============ -->
+<section id="firm" class="bg-stone-50">
+  <div class="wrap py-20 md:py-28 grid lg:grid-cols-12 gap-10">
+    <p class="eyebrow text-green-700 lg:col-span-3">The Firm</p>
+    <div class="lg:col-span-9">
+      <h2 class="font-display text-3xl md:text-[2.75rem] leading-tight max-w-[46rem]">A vertically integrated operator. One decision-making team from first call to stabilized asset.</h2>
+      <div class="mt-10 grid md:grid-cols-2 gap-8 text-stone-700 leading-relaxed max-w-[60rem]">
+        <p>Most sellers deal with layers: an acquisitions desk, an outside investment committee, a third-party manager, a listing broker. Citicore removes them. We buy, build, manage and broker through our own platform, so the people who underwrite your building are the people who close it and operate it.</p>
+        <p>That structure is why we move faster than larger funds and underwrite more carefully than smaller buyers. We price on real operating data, commit to our numbers early and do not retrade on issues that were visible at the outset.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACQUISITION CRITERIA (homepage summary; full buy box on future Acquisitions page) ============ -->
+<section id="criteria" class="bg-stone-50 border-t border-stone-300/60">
+  <div class="wrap py-14 md:py-16 grid lg:grid-cols-12 gap-8 items-start">
+    <div class="lg:col-span-3">
+      <p class="eyebrow text-green-700">Acquisition Criteria</p>
+      <h2 class="font-display text-2xl md:text-3xl mt-3 leading-tight">What we buy</h2>
+    </div>
+    <dl class="lg:col-span-9 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-stone-300 border border-stone-300">
+      <div class="bg-stone-50 p-6"><dt class="eyebrow text-stone-500 text-[0.62rem]">Asset types</dt><dd class="mt-3 text-navy-900 leading-relaxed">Multifamily, mixed-use and small commercial buildings</dd></div>
+      <div class="bg-stone-50 p-6"><dt class="eyebrow text-stone-500 text-[0.62rem]">Geography</dt><dd class="mt-3 text-navy-900 leading-relaxed">Massachusetts and southern New Hampshire, with a focus on Boston, the North Shore and Cape Cod. Good deals elsewhere are always considered.</dd></div>
+      <div class="bg-stone-50 p-6"><dt class="eyebrow text-stone-500 text-[0.62rem]">Profile</dt><dd class="mt-3 text-navy-900 leading-relaxed">Stabilized and well-located assets with room to improve operations</dd></div>
+      <div class="bg-stone-50 p-6"><dt class="eyebrow text-stone-500 text-[0.62rem]">How we buy</dt><dd class="mt-3 text-navy-900 leading-relaxed">Off-market, direct from owners or through brokers. Cooperating brokers protected.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ PLATFORM ============ -->
+<section class="bg-stone-100 border-y border-stone-300/60">
+  <div class="wrap py-20 md:py-24">
+    <p class="eyebrow text-green-700">Platform</p>
+    <h2 class="font-display text-3xl md:text-4xl mt-4 max-w-[40rem]">Four business lines. One team accountable for every result.</h2>
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-stone-300">
+      <a id="acquisitions" href="#submit" class="pillar block border-r border-b border-stone-300 p-8 bg-stone-100">
+        <p class="eyebrow text-stone-500 text-[0.65rem]">Acquisitions &amp; Development</p>
+        <h3 class="font-display text-2xl mt-5">Acquire. Improve. Hold.</h3>
+        <p class="mt-4 text-stone-700 text-[0.95rem] leading-relaxed">We buy quality buildings and own them for the long term, with steady investment and professional management.</p>
+        <ul class="mt-6 text-sm space-y-2.5">
+          <li class="flex justify-between gap-3 border-b border-stone-300/70 pb-2"><span class="text-stone-500">Assets</span><span class="text-right">Multifamily, mixed-use, commercial</span></li>
+          <li class="flex justify-between gap-3"><span class="text-stone-500">Profile</span><span class="text-right">Stabilized, long-term hold</span></li>
+        </ul>
+        <span class="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-green-700">Submit a property <span class="arrow">→</span></span>
+      </a>
+      <a id="management" href="#contact" class="pillar block border-r border-b border-stone-300 p-8 bg-stone-100">
+        <p class="eyebrow text-stone-500 text-[0.65rem]">Operations</p>
+        <h3 class="font-display text-2xl mt-5">Asset &amp; Property Management</h3>
+        <p class="mt-4 text-stone-700 text-[0.95rem] leading-relaxed">In-house management with clear reporting and a capital plan for every building.</p>
+        <ul class="mt-6 text-sm space-y-2.5 text-stone-700">
+          <li class="border-b border-stone-300/70 pb-2">Leasing and rent-roll optimization</li>
+          <li class="border-b border-stone-300/70 pb-2">Capital projects and construction</li>
+          <li>Monthly owner and lender reporting</li>
+        </ul>
+        <span class="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-green-700">Management services <span class="arrow">→</span></span>
+      </a>
+      <a href="#brokerage" class="pillar block border-r border-b border-stone-300 p-8 bg-stone-100">
+        <p class="eyebrow text-stone-500 text-[0.65rem]">Brokerage</p>
+        <h3 class="font-display text-2xl mt-5">Grove Property Group</h3>
+        <p class="mt-4 text-stone-700 text-[0.95rem] leading-relaxed">Our licensed brokerage arm. Investment sales, leasing and residential brokerage across Boston.</p>
+        <ul class="mt-6 text-sm space-y-2.5 text-stone-700">
+          <li class="border-b border-stone-300/70 pb-2">Multifamily investment sales</li>
+          <li class="border-b border-stone-300/70 pb-2">Commercial and residential leasing</li>
+          <li>Buyer and seller representation</li>
+        </ul>
+        <span class="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-green-700">About Grove <span class="arrow">→</span></span>
+      </a>
+      <a href="#stay" class="pillar block border-r border-b border-stone-300 p-8 bg-stone-100">
+        <p class="eyebrow text-stone-500 text-[0.65rem]">Hospitality</p>
+        <h3 class="font-display text-2xl mt-5">Vacation Rentals</h3>
+        <p class="mt-4 text-stone-700 text-[0.95rem] leading-relaxed">Professionally managed short-term rentals on Cape Cod, run to the same standard as our long-term assets.</p>
+        <ul class="mt-6 text-sm space-y-2.5 text-stone-700">
+          <li class="border-b border-stone-300/70 pb-2">Off Grid — Dennis, MA</li>
+          <li class="border-b border-stone-300/70 pb-2">5 bedrooms · sleeps 12</li>
+          <li>Minutes to Mayflower Beach</li>
+        </ul>
+        <span class="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-green-700">See the house <span class="arrow">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="portfolio" class="bg-stone-50">
+  <div class="wrap py-20 md:py-28">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div>
+        <p class="eyebrow text-green-700">Projects &amp; Holdings</p>
+        <h2 class="font-display text-3xl md:text-4xl mt-4 max-w-[36rem]">Built, renovated and operated block by block in South Boston.</h2>
+      </div>
+      <div class="flex border border-stone-300" role="group" aria-label="Filter projects">
+        <button type="button" data-f="all" class="pf px-4 py-2.5 text-sm font-medium">All</button>
+        <button type="button" data-f="Current" class="pf px-4 py-2.5 text-sm font-medium border-l border-stone-300">Current</button>
+        <button type="button" data-f="Sold" class="pf px-4 py-2.5 text-sm font-medium border-l border-stone-300">Sold</button>
+      </div>
+    </div>
+    <div class="mt-10 grid md:grid-cols-2 gap-4">
+      <figure class="relative">
+        <img src="images/397-before.jpg" alt="West 4th Street before renovation" width="1000" height="750" loading="lazy" class="block w-full h-auto">
+        <figcaption class="absolute top-3 left-3 bg-navy-950/85 text-stone-50 eyebrow text-[0.62rem] px-3 py-1.5">Before</figcaption>
+      </figure>
+      <figure class="relative">
+        <img src="images/397-after.jpg" alt="West 4th Street after renovation, new kitchen" width="889" height="667" loading="lazy" class="block w-full h-auto">
+        <figcaption class="absolute top-3 left-3 bg-navy-900 text-stone-50 eyebrow text-[0.62rem] px-3 py-1.5">After</figcaption>
+      </figure>
+    </div>
+    <p class="mt-3 text-sm text-stone-500">West 4th Street, South Boston · capital improvement project</p>
+    <p class="mt-12 text-sm text-stone-500 num" id="projCount"></p>
+    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12" id="assetGrid"></div>
+  </div>
+</section>
+
+<!-- ============ BROKERAGE ============ -->
+<section id="brokerage" class="bg-stone-100 border-y border-stone-300/60">
+  <div class="wrap py-20 md:py-24 grid lg:grid-cols-12 gap-12 items-start">
+    <div class="lg:col-span-5">
+      <p class="eyebrow text-green-700">Brokerage Arm</p>
+      <h2 class="mt-5"><img src="images/grove-logo-dark.png" alt="Grove Property Group" width="720" height="173" class="h-14 md:h-16 w-auto"></h2>
+      <p class="mt-5 text-stone-700 leading-relaxed max-w-[32rem]">Grove Property Group is the licensed brokerage of Citicore Properties Inc. Grove agents see the market every day, which gives our acquisitions team deal flow and pricing data most buyers never see. Clients get brokers who understand ownership because they work inside an owner-operator.</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="https://gpgboston.com" class="inline-flex items-center gap-2 bg-navy-900 hover:bg-navy-700 text-stone-50 font-semibold px-6 py-3.5 transition-colors">Visit gpgboston.com <span aria-hidden="true">↗</span></a>
+      </div>
+      <p class="mt-5 text-sm text-stone-500">Grove Property Group &nbsp;·&nbsp; <span class="select-all num">(781) 670-5993</span></p>
+    </div>
+    <dl class="lg:col-span-7 grid sm:grid-cols-2 gap-px bg-stone-300 border border-stone-300">
+      <div class="bg-stone-50 p-7"><dt class="font-semibold">Investment Sales</dt><dd class="mt-2 text-sm text-stone-700 leading-relaxed">Multifamily and mixed-use dispositions, marketed with full offering memorandums and direct buyer outreach.</dd></div>
+      <div class="bg-stone-50 p-7"><dt class="font-semibold">Off-Market Deal Flow</dt><dd class="mt-2 text-sm text-stone-700 leading-relaxed">Quiet sales to qualified buyers for owners who value privacy over a public listing.</dd></div>
+      <div class="bg-stone-50 p-7"><dt class="font-semibold">Leasing</dt><dd class="mt-2 text-sm text-stone-700 leading-relaxed">Residential and commercial leasing for our buildings and third-party owners.</dd></div>
+      <div class="bg-stone-50 p-7"><dt class="font-semibold">Buyer Representation</dt><dd class="mt-2 text-sm text-stone-700 leading-relaxed">Investors and homebuyers represented by agents who underwrite like owners.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ TEAM ============ -->
+<section id="team" class="bg-stone-50">
+  <div class="wrap py-20 md:py-24">
+    <p class="eyebrow text-green-700">Team</p>
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <h2 class="font-display text-3xl md:text-4xl mt-4 max-w-[36rem]">Small team. Every deal gets direct attention.</h2>
+      <p class="text-sm text-stone-700 leading-relaxed">All inquiries go to the principal<br><span class="select-all font-semibold text-navy-900">john@citicoreprops.com</span> · <span class="select-all num font-semibold text-navy-900">(781) 670-5993</span></p>
+    </div>
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <article class="border-t-2 border-navy-900 pt-6">
+        <img src="images/team-john.jpg" alt="John" width="600" height="600" loading="lazy" class="block w-full aspect-square object-cover bg-stone-100">
+        <h3 class="font-display text-2xl mt-6">John</h3>
+        <p class="eyebrow text-stone-500 text-[0.65rem] mt-2">Principal</p>
+        <p class="mt-3 text-sm text-stone-700">Acquisitions, development and Grove brokerage</p>
+      </article>
+      <article class="border-t-2 border-navy-900 pt-6">
+        <img src="images/team-mike.jpg" alt="Mike" width="600" height="600" loading="lazy" class="block w-full aspect-square object-cover bg-stone-100">
+        <h3 class="font-display text-2xl mt-6">Mike</h3>
+        <p class="eyebrow text-stone-500 text-[0.65rem] mt-2">Operations</p>
+        <p class="mt-3 text-sm text-stone-700">Property operations and management</p>
+      </article>
+      <article class="border-t-2 border-navy-900 pt-6">
+        <img src="images/team-nik.jpg" alt="Nik" width="600" height="600" loading="lazy" class="block w-full aspect-square object-cover bg-stone-100">
+        <h3 class="font-display text-2xl mt-6">Nik</h3>
+        <p class="eyebrow text-stone-500 text-[0.65rem] mt-2">Acquisitions</p>
+        <p class="mt-3 text-sm text-stone-700">Deal sourcing and owner outreach</p>
+      </article>
+      <article class="border-t-2 border-navy-900 pt-6">
+        <img src="images/team-angelica.jpg" alt="Angelica" width="600" height="600" loading="lazy" class="block w-full aspect-square object-cover bg-stone-100">
+        <h3 class="font-display text-2xl mt-6">Angelica</h3>
+        <p class="eyebrow text-stone-500 text-[0.65rem] mt-2">Acquisitions</p>
+        <p class="mt-3 text-sm text-stone-700">Deal sourcing and owner outreach</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY SELL TO US ============ -->
+<section class="bg-navy-900 text-stone-50">
+  <div class="wrap py-20 md:py-24 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-4">
+      <p class="eyebrow text-green-300">For Owners &amp; Brokers</p>
+      <h2 class="font-display text-3xl md:text-4xl mt-4 leading-tight">Certainty is the number that matters.</h2>
+      <p class="mt-5 text-stone-300 leading-relaxed">A high offer that retrades in diligence costs a seller months. We would rather be right the first time.</p>
+    </div>
+    <div class="lg:col-span-8 grid sm:grid-cols-2 gap-px bg-white/10 border border-white/10">
+      <div class="bg-navy-900 p-7">
+        <h3 class="font-semibold text-lg">Easy to work with</h3>
+        <p class="mt-2 text-stone-300 text-sm leading-relaxed">We respond quickly, keep the process simple and tell you where we stand at every step.</p>
+      </div>
+      <div class="bg-navy-900 p-7">
+        <h3 class="font-semibold text-lg">Closing certainty</h3>
+        <p class="mt-2 text-stone-300 text-sm leading-relaxed">Decisions are made internally. No outside committee, no financing surprises late in the process.</p>
+      </div>
+      <div class="bg-navy-900 p-7">
+        <h3 class="font-semibold text-lg">Discretion</h3>
+        <p class="mt-2 text-stone-300 text-sm leading-relaxed">Off-market conversations stay off-market. We sign NDAs on request and never contact tenants without approval.</p>
+      </div>
+      <div class="bg-navy-900 p-7">
+        <h3 class="font-semibold text-lg">Broker friendly</h3>
+        <p class="mt-2 text-stone-300 text-sm leading-relaxed">We protect cooperating brokers and honor commissions in writing. Bring us the deal; we will not go around you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEAL SUBMISSION CTA ============ -->
+<section id="submit" class="bg-navy-950 text-stone-50 relative overflow-hidden">
+  <div class="absolute inset-0 grid-lines opacity-60" aria-hidden="true"></div>
+  <div class="wrap relative py-20 md:py-28 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-5">
+      <p class="eyebrow text-green-300">Deal Submission</p>
+      <h2 class="font-display text-4xl md:text-5xl mt-4 leading-[1.1]">Have an off-market asset? <em class="text-brass-300 font-medium">Send it directly.</em></h2>
+      <p class="mt-6 text-stone-300 leading-relaxed">Submissions go straight to our acquisitions team. Share what you have; a rent roll and operating statement help us give you a real answer.</p>
+      <ol class="mt-10 space-y-5 text-sm">
+        <li class="flex gap-4"><span class="eyebrow text-green-300 pt-0.5">Step 1</span><span class="text-stone-300">Submit the address and basic details</span></li>
+        <li class="flex gap-4"><span class="eyebrow text-green-300 pt-0.5">Step 2</span><span class="text-stone-300">We review it and call you back</span></li>
+        <li class="flex gap-4"><span class="eyebrow text-green-300 pt-0.5">Step 3</span><span class="text-stone-300">Clear offer, clean terms, simple close</span></li>
+      </ol>
+    </div>
+    <form id="dealForm" class="lg:col-span-7 border border-white/10 bg-navy-900/80 p-6 md:p-10" novalidate data-endpoint="https://formsubmit.co/ajax/john@citicoreprops.com">
+      <input type="hidden" name="_subject" value="New deal submission — citicoreprops.com">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+      <div class="grid sm:grid-cols-2 gap-x-8 gap-y-6">
+        <div>
+          <label for="f-role" class="eyebrow text-[0.62rem] text-stone-500">I am a</label>
+          <select id="f-role" name="role" class="field" required>
+            <option value="Owner">Property owner</option>
+            <option value="Broker">Broker</option>
+            <option value="Lender">Lender</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="f-type" class="eyebrow text-[0.62rem] text-stone-500">Asset type</label>
+          <select id="f-type" name="assetType" class="field">
+            <option>Multifamily</option>
+            <option>Mixed-use</option>
+            <option>Retail / Small-bay commercial</option>
+            <option>Office</option>
+            <option>Industrial / Flex</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="sm:col-span-2">
+          <label for="f-address" class="eyebrow text-[0.62rem] text-stone-500">Property address</label>
+          <input id="f-address" name="address" class="field" placeholder="Street, city, state" required autocomplete="off">
+        </div>
+        <div>
+          <label for="f-units" class="eyebrow text-[0.62rem] text-stone-500">Units / SF</label>
+          <input id="f-units" name="size" class="field num" placeholder="e.g. 12 units">
+        </div>
+        <div>
+          <label for="f-price" class="eyebrow text-[0.62rem] text-stone-500">Asking price (if known)</label>
+          <input id="f-price" name="price" class="field num" placeholder="e.g. $4,250,000">
+        </div>
+        <div>
+          <label for="f-name" class="eyebrow text-[0.62rem] text-stone-500">Full name</label>
+          <input id="f-name" name="name" class="field" required autocomplete="name">
+        </div>
+        <div>
+          <label for="f-email" class="eyebrow text-[0.62rem] text-stone-500">Email</label>
+          <input id="f-email" name="email" type="email" class="field" required autocomplete="email">
+        </div>
+        <div class="sm:col-span-2">
+          <label for="f-notes" class="eyebrow text-[0.62rem] text-stone-500">Notes</label>
+          <textarea id="f-notes" name="notes" rows="3" class="field resize-none" placeholder="Occupancy, in-place rents, timing, reason for sale"></textarea>
+        </div>
+      </div>
+      <div class="mt-9 flex flex-wrap items-center gap-5">
+        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 transition-colors">Submit Property</button>
+        <p class="text-xs text-stone-500 max-w-[18rem]">Confidential. Or call <span class="select-all num">(781) 670-5993</span>.</p>
+      </div>
+      <p id="formMsg" class="mt-6 text-sm" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ VACATION RENTAL (compact) ============ -->
+<section id="stay" class="bg-stone-100 border-t border-stone-300/60">
+  <div class="wrap py-8 flex flex-col sm:flex-row sm:items-center gap-6">
+    <img src="images/offgrid.jpg" alt="Off Grid, a cedar-shingle Cape in Dennis, MA" width="1200" height="800" loading="lazy" class="block w-full sm:w-48 aspect-[3/2] object-cover">
+    <div class="flex-1">
+      <p class="eyebrow text-stone-500 text-[0.62rem]">Also from Citicore · Cape Cod vacation rental</p>
+      <p class="font-display text-xl mt-2">Off Grid <span class="text-stone-500 font-normal">— Dennis, MA</span></p>
+      <p class="text-sm text-stone-700 mt-1 num">5 bedrooms · 2 baths · sleeps 12 · minutes to Mayflower Beach</p>
+    </div>
+    <a href="https://offgrid-dennis.tiiny.site" class="inline-flex items-center justify-center gap-2 border border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-stone-50 font-semibold text-sm px-5 py-3 transition-colors">Check Availability <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer id="contact" class="bg-navy-950 text-stone-300 border-t border-white/10">
+  <div class="wrap py-16 grid md:grid-cols-12 gap-10">
+    <div class="md:col-span-5">
+      <span class="logo2b" style="display:inline-block;line-height:1;color:#F5F6F7;text-align:center"><span style="display:block;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 125;font-weight:750;font-size:1.7rem;letter-spacing:.02em;white-space:nowrap"><svg style="display:inline-block;height:.686em;width:auto;vertical-align:baseline;margin-right:.06em;overflow:visible" viewBox="0 0 38 40" aria-hidden="true"><path fill="currentColor" d="M0 0h38v10H10v20h28v10H0z"/><rect x="17" y="18" width="9" height="22" fill="currentColor"/></svg>ITICORE</span><span style="display:block;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 125;font-weight:450;font-size:.5rem;letter-spacing:.62em;margin-top:.45em;padding-left:.62em">PROPERTIES</span></span>
+      <p class="mt-4 text-sm leading-relaxed max-w-[26rem]">Acquisition, development, management and brokerage of multifamily, mixed-use and commercial real estate in Massachusetts and southern New Hampshire. Brokerage services provided by Grove Property Group, a division of Citicore Properties Inc.</p>
+    </div>
+    <div class="md:col-span-3 text-sm">
+      <p class="eyebrow text-[0.62rem] text-stone-500">Office</p>
+      <address class="not-italic mt-3 leading-relaxed">423 West Broadway<br>South Boston, MA 02127</address>
+      <p class="eyebrow text-[0.62rem] text-stone-500 mt-6">Mailing</p>
+      <p class="mt-3">PO Box 2946<br>Woburn, MA 01888</p>
+      <p class="mt-6 flex gap-5"><a class="link-u" href="https://www.instagram.com/ccoreproperties/">Instagram</a><a class="link-u" href="https://www.facebook.com/profile.php?id=61565684049766">Facebook</a></p>
+    </div>
+    <div class="md:col-span-4 text-sm">
+      <p class="eyebrow text-[0.62rem] text-stone-500">Acquisitions &amp; Inquiries</p>
+      <p class="mt-3 select-all">john@citicoreprops.com</p>
+      <p class="eyebrow text-[0.62rem] text-stone-500 mt-6">Phone</p>
+      <p class="mt-3 select-all num">(781) 670-5993</p>
+    </div>
+  </div>
+  <div class="wrap py-6 border-t border-white/10 flex flex-wrap justify-between gap-4 text-xs text-stone-500">
+    <p>© <span id="yr">2026</span> Citicore Properties Inc. All rights reserved.</p>
+    <p>This site does not constitute an offer to sell or a solicitation of an offer to buy any security.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Mobile menu
+  var btn = document.getElementById('menuBtn'), nav = document.getElementById('mobileNav');
+  btn.addEventListener('click', function () {
+    var open = nav.hidden; nav.hidden = !open; btn.setAttribute('aria-expanded', String(open));
+  });
+  nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { nav.hidden = true; btn.setAttribute('aria-expanded', 'false'); }); });
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Building elevation generator (architectural line-drawing placeholders)
+  function elevation(cfg) {
+    var s = '', W = cfg.w, H = cfg.h, stroke = cfg.stroke, dim = cfg.dim, fill = cfg.fill;
+    var ground = H - 20;
+    s += '<line x1="0" y1="' + ground + '" x2="' + W + '" y2="' + ground + '" stroke="' + dim + '" stroke-width="1"/>';
+    var x = cfg.pad;
+    cfg.bldgs.forEach(function (b) {
+      var top = ground - b.floors * b.fh - 14;
+      s += '<rect x="' + x + '" y="' + top + '" width="' + b.w + '" height="' + (ground - top) + '" fill="' + fill + '" stroke="' + stroke + '" stroke-width="1.1"/>';
+      s += '<line x1="' + (x - 3) + '" y1="' + (top + 6) + '" x2="' + (x + b.w + 3) + '" y2="' + (top + 6) + '" stroke="' + stroke + '" stroke-width="1.1"/>';
+      var cols = b.cols, gw = (b.w - 16) / cols;
+      for (var f = 0; f < b.floors; f++) {
+        var y = top + 14 + f * b.fh + 6;
+        for (var c = 0; c < cols; c++) {
+          var wx = x + 8 + c * gw + gw * 0.2, ww = gw * 0.6, wh = b.fh * 0.58;
+          if (f === b.floors - 1 && b.retail) {
+            s += '<rect x="' + (x + 8 + c * gw + 2) + '" y="' + y + '" width="' + (gw - 4) + '" height="' + (b.fh - 10) + '" fill="none" stroke="' + dim + '" stroke-width="1"/>';
+          } else {
+            s += '<rect x="' + wx + '" y="' + y + '" width="' + ww + '" height="' + wh + '" fill="none" stroke="' + dim + '" stroke-width="1"/>';
+            s += '<line x1="' + wx + '" y1="' + (y + wh / 2) + '" x2="' + (wx + ww) + '" y2="' + (y + wh / 2) + '" stroke="' + dim + '" stroke-width=".6"/>';
+          }
+        }
+      }
+      x += b.w + (b.gap || 0);
+    });
+    return s;
+  }
+
+  // Projects — status: 'Current' (owned) or 'Sold'. Edit this list to update the site.
+  var S = 'South Boston, MA';
+  // Grouped by street + status so cards stay distinct without house numbers (owner's privacy rule).
+  var assets = [
+    { name: 'East 6th Street', hood: S, bldg: 2, units: 6, status: 'Current', img: 'images/633-e6.jpg' },
+    { name: 'East 6th Street & L Street', hood: S, bldg: 1, units: 6, status: 'Current', note: 'multi-building parcel' },
+    { name: 'L Street', hood: S, bldg: 2, units: 5, status: 'Current', img: 'images/206-l.jpg' },
+    { name: 'Emerson Street', hood: S, bldg: 1, units: 4, status: 'Current', img: 'images/emerson.jpg' },
+    { name: 'East 5th Street', hood: S, bldg: 1, units: 3, status: 'Current' },
+    { name: 'West 4th Street', hood: S, bldg: 1, units: 4, status: 'Sold', img: 'images/397-after.jpg' },
+    { name: 'L Street', hood: S, bldg: 1, units: 3, status: 'Sold', img: 'images/178-l-kitchen.jpg' },
+    { name: 'East 7th Street', hood: S, bldg: 1, units: 2, status: 'Sold', img: 'images/466-e7.jpg' },
+    { name: 'Viking Street', hood: S, bldg: 1, units: 2, status: 'Sold', img: 'images/2-viking.jpg' },
+    { name: 'East 5th Street', hood: S, bldg: 3, units: 7, status: 'Sold', img: 'images/428-e5.jpg' },
+    { name: 'East 2nd Street', hood: S, bldg: 2, units: 6, status: 'Sold', img: 'images/726-e2.jpg' },
+    { name: 'G Street', hood: S, bldg: 1, units: 2, status: 'Sold' },
+    { name: 'East Broadway', hood: S, bldg: 1, units: 2, status: 'Sold' },
+    { name: 'Colebrook Street', hood: S, bldg: 3, units: 3, unitLabel: 'single-family homes', status: 'Sold', noBldg: true }
+  ];
+  // photos first within each group
+  assets.sort(function (a, b) { return (a.status === b.status ? 0 : a.status === 'Current' ? -1 : 1) || ((b.img ? 1 : 0) - (a.img ? 1 : 0)); });
+  function bldgs(i, type) {
+    var n = (i * 7 + 3) % 4, B = [];
+    if (type === 'Mixed-use') return [{ w: 130, floors: 4, fh: 36, cols: 3, retail: true, gap: 6 }, { w: 164, floors: 4, fh: 36, cols: 4, retail: true }];
+    if (type === 'Condominium') return [{ w: 190, floors: 5, fh: 30, cols: 5, gap: 10 }, { w: 100, floors: 3, fh: 38, cols: 2 }];
+    if (n === 0) return [{ w: 96, floors: 3, fh: 42, cols: 2, gap: 8 }, { w: 96, floors: 3, fh: 42, cols: 2, gap: 8 }, { w: 96, floors: 3, fh: 42, cols: 2 }];
+    if (n === 1) return [{ w: 150, floors: 3, fh: 44, cols: 3, gap: 6 }, { w: 150, floors: 3, fh: 44, cols: 3 }];
+    if (n === 2) return [{ w: 120, floors: 4, fh: 34, cols: 3, gap: 6 }, { w: 90, floors: 3, fh: 40, cols: 2, gap: 6 }, { w: 84, floors: 3, fh: 40, cols: 2 }];
+    return [{ w: 200, floors: 3, fh: 44, cols: 4, gap: 8 }, { w: 90, floors: 2, fh: 50, cols: 2 }];
+  }
+  var grid = document.getElementById('assetGrid'), count = document.getElementById('projCount');
+  var cards = assets.map(function (a, i) {
+    var svg = elevation({ w: 320, h: 200, pad: 10, stroke: '#1A2430', dim: 'rgba(17,17,17,.4)', fill: '#F2F4F7', bldgs: bldgs(i, a.units > 3 ? 'Mixed-use' : '') });
+    var cur = a.status === 'Current';
+    return '<article class="asset-card" data-status="' + a.status + '" data-b="' + a.bldg + '">'
+      + (a.img ? '<div class="overflow-hidden bg-stone-100 aspect-[4/3]"><img class="elev block w-full h-full object-cover" src="' + a.img + '" alt="' + a.name + '" loading="lazy"></div>'
+        : '<div class="overflow-hidden bg-stone-100 border border-stone-300/70 aspect-[4/3] flex items-center"><svg class="elev w-full h-auto block" viewBox="0 0 320 200" role="img" aria-label="Elevation drawing, ' + a.name + '">' + svg + '</svg></div>')
+      + '<div class="mt-5 flex items-center justify-between eyebrow text-[0.62rem]"><span class="text-stone-500">Multifamily</span><span class="' + (cur ? 'text-green-700' : 'text-steel-500') + '">' + (cur ? '● Owned' : 'Sold') + '</span></div>'
+      + '<h3 class="font-display text-xl mt-2">' + a.name + '</h3>'
+      + '<p class="text-sm text-stone-500 mt-1">' + a.hood  + '</p>'
+      + '</article>';
+  });
+  grid.innerHTML = cards.join('');
+  var btns = document.querySelectorAll('.pf');
+  function applyFilter(f) {
+    var shown = 0;
+    grid.querySelectorAll('.asset-card').forEach(function (c) { var on = f === 'all' || c.getAttribute('data-status') === f; c.hidden = !on; if (on) shown += +c.getAttribute('data-b'); });
+    btns.forEach(function (b) { var on = b.getAttribute('data-f') === f; b.setAttribute('aria-pressed', String(on)); b.className = b.className.replace(/ ?(bg-navy-900 text-stone-50|text-navy-900 hover:bg-stone-100)/g, '') + (on ? ' bg-navy-900 text-stone-50' : ' text-navy-900 hover:bg-stone-100'); });
+    count.textContent = shown + (f === 'all' ? ' buildings owned or sold' : f === 'Current' ? ' buildings currently owned' : ' buildings sold');
+  }
+  btns.forEach(function (b) { b.addEventListener('click', function () { applyFilter(b.getAttribute('data-f')); }); });
+  applyFilter('all');
+
+
+
+  // Deal form — live build posts to FormSubmit (emails john@citicoreprops.com); preview build has no endpoint
+  var form = document.getElementById('dealForm'), msg = document.getElementById('formMsg');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var missing = ['f-address', 'f-name', 'f-email'].filter(function (id) { return !document.getElementById(id).value.trim(); });
+    var email = document.getElementById('f-email').value;
+    if (missing.length) { msg.className = 'mt-6 text-sm text-brass-300'; msg.textContent = 'Add the property address, your name and email to submit.'; document.getElementById(missing[0]).focus(); return; }
+    if (!/^\S+@\S+\.\S+$/.test(email)) { msg.className = 'mt-6 text-sm text-brass-300'; msg.textContent = 'Enter a valid email address.'; document.getElementById('f-email').focus(); return; }
+    var endpoint = form.getAttribute('data-endpoint'); if (endpoint === 'FORM' + '_ENDPOINT') endpoint = '';
+    if (!endpoint) { msg.className = 'mt-6 text-sm text-stone-300'; msg.textContent = 'Preview mode: the form is not connected yet, so nothing was sent.'; return; }
+    var btn = form.querySelector('button[type=submit]'); btn.disabled = true;
+    var payload = {}; new FormData(form).forEach(function (v, k) { payload[k] = v; });
+    fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(payload) })
+      .then(function (r) { return r.json().then(function (d) { if (!r.ok || String(d.success) !== 'true') throw 0; }); })
+      .then(function () { form.reset(); msg.className = 'mt-6 text-sm text-green-300'; msg.textContent = 'Received. Our acquisitions team will be in touch shortly.'; })
+      .catch(function () { msg.className = 'mt-6 text-sm text-brass-300'; msg.textContent = 'That did not go through. Email john@citicoreprops.com or call (781) 670-5993.'; })
+      .then(function () { btn.disabled = false; });
+  });
+})();
+</script>
+
+</body>
+</html>
