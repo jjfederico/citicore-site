@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="What Citicore Properties buys and how a deal works. Multifamily, mixed-use and small commercial across Massachusetts and southern New Hampshire. Submit a property confidentially.">
+<link rel="icon" type="image/png" sizes="32x32" href="images/citicore-icon-32.png">
+<link rel="apple-touch-icon" href="images/citicore-icon-180.png">
+<meta property="og:title" content="Acquisitions | Citicore Properties">
+<meta property="og:description" content="Acquisitions, management and brokerage across Massachusetts and southern New Hampshire.">
+<meta property="og:image" content="https://citicoreprops.com/images/citicore-social-share.png">
+<meta property="og:url" content="https://citicoreprops.com/acquisitions">
+<meta name="twitter:card" content="summary_large_image">
+<title>Acquisitions | Citicore Properties</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Archivo:wdth,wght@100..125,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { 950: '#131B24', 900: '#1A2430', 800: '#23303E', 700: '#33424F' },
+          stone: { 50: '#FFFFFF', 100: '#F2F4F7', 300: '#D8DEE5', 500: '#66707C', 700: '#3B4550' },
+          brass: { 300: '#A7B4C2', 400: '#E6EAEF', 500: '#FFFFFF', 600: '#1A2430' },
+          steel: { 400: '#8A95A1', 500: '#66707C' },
+          // "green" token = the blue accent (rename when componentized)
+          green: { 300: '#9DBDE0', 600: '#2E6096', 700: '#234C78' }
+        },
+        fontFamily: {
+          display: ['Outfit', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
+          mono: ['"IBM Plex Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace']
+        },
+        maxWidth: { site: '76rem' }
+      }
+    }
+  }
+</script>
+<style>
+  :root { color-scheme: light; }
+  html { scroll-behavior: smooth; }
+  body { background: #FFFFFF; color: #1A2430; font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 16px; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  .font-display { font-weight: 600; letter-spacing: -0.02em; }
+  h1.font-display { font-weight: 700; letter-spacing: -0.03em; }
+  .font-display em { font-style: normal; }
+  .eyebrow { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; }
+  .num { font-variant-numeric: tabular-nums lining-nums; }
+  .wrap { max-width: 76rem; margin-inline: auto; padding-inline: 1.25rem; }
+  @media (min-width: 768px) { .wrap { padding-inline: 2.5rem; } }
+  .site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40; }
+  .grid-lines { background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 64px 64px; }
+  .link-u { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size .3s ease; }
+  .link-u:hover, .link-u:focus-visible { background-size: 100% 1px; }
+  .pillar { transition: background-color .3s ease, border-color .3s ease; }
+  .pillar:hover { background-color: #fff; border-color: #111111; }
+  .pillar .arrow { transition: transform .3s ease; }
+  .pillar:hover .arrow { transform: translateX(4px); }
+  .asset-card .elev { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+  .asset-card:hover .elev { transform: scale(1.03); }
+  :focus-visible { outline: 2px solid #8A8A8A; outline-offset: 3px; }
+  .field { width: 100%; background: transparent; border: 0; border-bottom: 1px solid rgba(201,206,214,.35); color: #FFFFFF; padding: .7rem 0; font-size: .95rem; border-radius: 0; }
+  .field::placeholder { color: #8A8A8A; }
+  .field:focus { outline: none; border-bottom-color: #FFFFFF; }
+  select.field option { color: #111111; }
+  .rise { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
+  .rise-2 { animation-delay: .12s; } .rise-3 { animation-delay: .24s; } .rise-4 { animation-delay: .36s; }
+  @keyframes rise { from { transform: translateY(14px); } to { transform: none; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+<!-- ============ HEADER ============ -->
+<header class="site-header bg-navy-950/95 backdrop-blur border-b border-white/10">
+  <div class="wrap flex items-center justify-between h-16 md:h-20">
+    <a href="/" class="flex items-center shrink-0" aria-label="Citicore Properties home">
+      <span class="logo2b" style="display:inline-block;line-height:1;color:#F5F6F7;text-align:center"><span style="display:block;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 125;font-weight:750;font-size:1.25rem;letter-spacing:.02em;white-space:nowrap"><svg style="display:inline-block;height:.686em;width:auto;vertical-align:baseline;margin-right:.06em;overflow:visible" viewBox="0 0 38 40" aria-hidden="true"><path fill="currentColor" d="M0 0h38v10H10v20h28v10H0z"/><rect x="17" y="18" width="9" height="22" fill="currentColor"/></svg>ITICORE</span><span style="display:block;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 125;font-weight:450;font-size:.4rem;letter-spacing:.62em;margin-top:.45em;padding-left:.62em">PROPERTIES</span></span>
+    </a>
+    <nav aria-label="Primary" class="hidden lg:flex items-center gap-6 text-sm text-stone-300">
+      <a href="/acquisitions" class="text-stone-50" aria-current="page">Acquisitions</a>
+      <a href="/#management" class="link-u hover:text-stone-50">Management</a>
+      <a href="/#brokerage" class="link-u hover:text-stone-50">Brokerage</a>
+      <a href="/#portfolio" class="link-u hover:text-stone-50">Projects</a>
+      <a href="/#team" class="link-u hover:text-stone-50">Team</a>
+      <a href="#contact" class="link-u hover:text-stone-50">Contact</a>
+    </nav>
+    <a href="#submit" class="hidden sm:inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold px-5 py-2.5 transition-colors">Submit a Deal</a>
+    <button id="menuBtn" class="lg:hidden text-stone-50 p-2 -mr-2" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+    </button>
+  </div>
+  <nav id="mobileNav" aria-label="Mobile" class="lg:hidden border-t border-white/10 bg-navy-950" hidden>
+    <div class="wrap py-4 flex flex-col text-stone-100">
+      <a href="/acquisitions" class="py-3 border-b border-white/5">Acquisitions</a>
+      <a href="/#management" class="py-3 border-b border-white/5">Management</a>
+      <a href="/#brokerage" class="py-3 border-b border-white/5">Brokerage</a>
+      <a href="/#portfolio" class="py-3 border-b border-white/5">Projects</a>
+      <a href="/#team" class="py-3 border-b border-white/5">Team</a>
+      <a href="#contact" class="py-3 border-b border-white/5">Contact</a>
+      <a href="#submit" class="mt-4 bg-green-600 text-white font-semibold text-center py-3">Submit a Deal</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="relative bg-navy-900 text-stone-50 overflow-hidden">
+  <div class="absolute inset-0 grid-lines" aria-hidden="true"></div>
+  <div class="wrap relative pt-16 pb-16 md:pt-24 md:pb-20 grid lg:grid-cols-12 gap-12 items-end">
+    <div class="lg:col-span-8">
+      <p class="eyebrow text-green-300 rise">Acquisitions</p>
+      <h1 class="font-display text-[2.5rem] leading-[1.05] sm:text-6xl mt-6 rise rise-2">We buy buildings<br><em class="text-brass-300 font-medium">we intend to keep.</em></h1>
+      <p class="mt-7 text-lg text-stone-300 max-w-[38rem] leading-relaxed rise rise-3">Citicore buys multifamily, mixed-use and small commercial property for its own long-term portfolio. You deal directly with the people who make the decision.</p>
+      <div class="mt-10 flex flex-wrap gap-4 rise rise-4">
+        <a href="#submit" class="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white font-semibold px-7 py-4 transition-colors">Submit a Property
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="tel:+17816705993" class="inline-flex items-center gap-3 border border-white/25 hover:border-green-300 text-stone-50 px-7 py-4 transition-colors num">Call (781) 670-5993</a>
+      </div>
+    </div>
+    <nav aria-label="On this page" class="lg:col-span-4 hidden lg:block border-l border-white/10 pl-8 text-sm rise rise-3">
+      <p class="eyebrow text-[0.62rem] text-stone-500">On this page</p>
+      <ul class="mt-4 space-y-3 text-stone-300">
+        <li><a class="link-u hover:text-stone-50" href="#criteria">What we buy</a></li>
+        <li><a class="link-u hover:text-stone-50" href="#process">How a deal works</a></li>
+        <li><a class="link-u hover:text-stone-50" href="#send">What to send</a></li>
+        <li><a class="link-u hover:text-stone-50" href="#brokers">For brokers</a></li>
+        <li><a class="link-u hover:text-stone-50" href="#faq">Questions</a></li>
+      </ul>
+    </nav>
+  </div>
+</section>
+
+<!-- ============ CRITERIA ============ -->
+<section id="criteria" class="bg-stone-50">
+  <div class="wrap py-20 md:py-24 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <p class="eyebrow text-green-700">Acquisition Criteria</p>
+      <h2 class="font-display text-3xl md:text-4xl mt-4 leading-tight">What we buy</h2>
+      <p class="mt-5 text-stone-700 leading-relaxed max-w-[26rem]">These are guidelines, not hard limits. If a property doesn't fit neatly, send it anyway.</p>
+    </div>
+    <dl class="lg:col-span-8 border-t border-stone-300">
+      <div class="grid sm:grid-cols-3 gap-2 sm:gap-8 py-6 border-b border-stone-300">
+        <dt class="eyebrow text-[0.62rem] text-stone-500 pt-1">Asset types</dt>
+        <dd class="sm:col-span-2 text-navy-900 leading-relaxed">Multifamily from two-family homes up to larger apartment buildings. Also mixed-use and small commercial.</dd>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-2 sm:gap-8 py-6 border-b border-stone-300">
+        <dt class="eyebrow text-[0.62rem] text-stone-500 pt-1">Geography</dt>
+        <dd class="sm:col-span-2 text-navy-900 leading-relaxed">Massachusetts and southern New Hampshire, with a focus on Boston, the North Shore and Cape Cod. Good deals elsewhere are always considered.</dd>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-2 sm:gap-8 py-6 border-b border-stone-300">
+        <dt class="eyebrow text-[0.62rem] text-stone-500 pt-1">Condition</dt>
+        <dd class="sm:col-span-2 text-navy-900 leading-relaxed">Well-kept buildings and ones that need updating. Condition affects price, not whether we'll look.</dd>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-2 sm:gap-8 py-6 border-b border-stone-300">
+        <dt class="eyebrow text-[0.62rem] text-stone-500 pt-1">Occupancy</dt>
+        <dd class="sm:col-span-2 text-navy-900 leading-relaxed">Occupied or vacant. We keep existing leases in place and treat residents with respect.</dd>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-2 sm:gap-8 py-6 border-b border-stone-300">
+        <dt class="eyebrow text-[0.62rem] text-stone-500 pt-1">Hold</dt>
+        <dd class="sm:col-span-2 text-navy-900 leading-relaxed">Long-term ownership with in-house management. We are not assembling properties to flip.</dd>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-2 sm:gap-8 py-6 border-b border-stone-300">
+        <dt class="eyebrow text-[0.62rem] text-stone-500 pt-1">Sources</dt>
+        <dd class="sm:col-span-2 text-navy-900 leading-relaxed">Direct from owners, through brokers, and from estates, attorneys and lenders. Off-market preferred, listed deals welcome.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section id="process" class="bg-stone-100 border-y border-stone-300/60">
+  <div class="wrap py-20 md:py-24">
+    <p class="eyebrow text-green-700">Process</p>
+    <h2 class="font-display text-3xl md:text-4xl mt-4 max-w-[36rem] leading-tight">How a deal works</h2>
+    <ol class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-stone-300">
+      <li class="border-r border-b border-stone-300 p-7 bg-stone-100">
+        <p class="eyebrow text-green-700 text-[0.62rem]">Step 1</p>
+        <h3 class="font-display text-xl mt-4">Send the basics</h3>
+        <p class="mt-3 text-sm text-stone-700 leading-relaxed">An address and a way to reach you is enough to start. Share more when you're ready.</p>
+      </li>
+      <li class="border-r border-b border-stone-300 p-7 bg-stone-100">
+        <p class="eyebrow text-green-700 text-[0.62rem]">Step 2</p>
+        <h3 class="font-display text-xl mt-4">We review and call</h3>
+        <p class="mt-3 text-sm text-stone-700 leading-relaxed">We look at the numbers and the neighborhood, then call you. If it isn't a fit, we tell you plainly.</p>
+      </li>
+      <li class="border-r border-b border-stone-300 p-7 bg-stone-100">
+        <p class="eyebrow text-green-700 text-[0.62rem]">Step 3</p>
+        <h3 class="font-display text-xl mt-4">Written offer</h3>
+        <p class="mt-3 text-sm text-stone-700 leading-relaxed">After a walkthrough, we put clear terms in writing. We don't make it contingent on things we could have checked first.</p>
+      </li>
+      <li class="border-r border-b border-stone-300 p-7 bg-stone-100">
+        <p class="eyebrow text-green-700 text-[0.62rem]">Step 4</p>
+        <h3 class="font-display text-xl mt-4">Close</h3>
+        <p class="mt-3 text-sm text-stone-700 leading-relaxed">Attorneys handle the closing, and we work around your timeline. We hold to the price we agreed.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ WHAT TO SEND + BROKERS ============ -->
+<section class="bg-stone-50">
+  <div class="wrap py-20 md:py-24 grid lg:grid-cols-2 gap-16">
+    <div id="send">
+      <p class="eyebrow text-green-700">Helpful, not required</p>
+      <h2 class="font-display text-3xl mt-4 leading-tight">What to send</h2>
+      <p class="mt-5 text-stone-700 leading-relaxed">The more we have, the faster and more accurate our answer. None of it is needed to start.</p>
+      <ul class="mt-8 border-t border-stone-300 text-navy-900">
+        <li class="py-4 border-b border-stone-300 flex gap-4"><span class="eyebrow text-[0.62rem] text-stone-500 pt-1 w-6">01</span>Rent roll with lease end dates</li>
+        <li class="py-4 border-b border-stone-300 flex gap-4"><span class="eyebrow text-[0.62rem] text-stone-500 pt-1 w-6">02</span>Last 12 months of income and expenses</li>
+        <li class="py-4 border-b border-stone-300 flex gap-4"><span class="eyebrow text-[0.62rem] text-stone-500 pt-1 w-6">03</span>Utilities and who pays them</li>
+        <li class="py-4 border-b border-stone-300 flex gap-4"><span class="eyebrow text-[0.62rem] text-stone-500 pt-1 w-6">04</span>Recent work: roof, heating, electrical, windows</li>
+        <li class="py-4 border-b border-stone-300 flex gap-4"><span class="eyebrow text-[0.62rem] text-stone-500 pt-1 w-6">05</span>Photos, if you have them</li>
+      </ul>
+    </div>
+    <div id="brokers" class="lg:border-l lg:border-stone-300 lg:pl-16">
+      <p class="eyebrow text-green-700">For Brokers</p>
+      <h2 class="font-display text-3xl mt-4 leading-tight">Bring us the deal. We won't go around you.</h2>
+      <p class="mt-5 text-stone-700 leading-relaxed">We run a brokerage ourselves, Grove Property Group, so we know what a commission is worth. We treat your deal the way we'd want ours treated.</p>
+      <ul class="mt-8 space-y-5 text-navy-900">
+        <li class="flex gap-4"><span class="mt-2 h-1.5 w-1.5 bg-green-600 shrink-0"></span><span>Commissions confirmed in writing before we engage with your client.</span></li>
+        <li class="flex gap-4"><span class="mt-2 h-1.5 w-1.5 bg-green-600 shrink-0"></span><span>No direct contact with your seller unless you ask us to.</span></li>
+        <li class="flex gap-4"><span class="mt-2 h-1.5 w-1.5 bg-green-600 shrink-0"></span><span>A straight answer, fast, so you're never left waiting on a maybe.</span></li>
+        <li class="flex gap-4"><span class="mt-2 h-1.5 w-1.5 bg-green-600 shrink-0"></span><span>NDAs signed on request.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS STRIP ============ -->
+<section class="bg-stone-100 border-y border-stone-300/60">
+  <div class="wrap py-16">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <p class="eyebrow text-green-700">Track Record</p>
+        <h2 class="font-display text-2xl md:text-3xl mt-3">Buildings we've owned and improved</h2>
+      </div>
+      <a href="/#portfolio" class="text-sm font-semibold text-green-700 link-u">See all projects →</a>
+    </div>
+    <div class="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-5">
+      <figure><img src="images/633-e6.jpg" alt="East 6th Street, South Boston" loading="lazy" class="block w-full aspect-[4/3] object-cover"><figcaption class="mt-2 flex justify-between text-sm"><span>East 6th Street</span><span class="eyebrow text-[0.6rem] text-green-700 pt-1">Owned</span></figcaption></figure>
+      <figure><img src="images/206-l.jpg" alt="L Street, South Boston" loading="lazy" class="block w-full aspect-[4/3] object-cover"><figcaption class="mt-2 flex justify-between text-sm"><span>L Street</span><span class="eyebrow text-[0.6rem] text-green-700 pt-1">Owned</span></figcaption></figure>
+      <figure><img src="images/397-after.jpg" alt="West 4th Street, South Boston" loading="lazy" class="block w-full aspect-[4/3] object-cover"><figcaption class="mt-2 flex justify-between text-sm"><span>West 4th Street</span><span class="eyebrow text-[0.6rem] text-stone-500 pt-1">Sold</span></figcaption></figure>
+      <figure><img src="images/726-e2.jpg" alt="East 2nd Street, South Boston" loading="lazy" class="block w-full aspect-[4/3] object-cover"><figcaption class="mt-2 flex justify-between text-sm"><span>East 2nd Street</span><span class="eyebrow text-[0.6rem] text-stone-500 pt-1">Sold</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="bg-stone-50">
+  <div class="wrap py-20 md:py-24 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <p class="eyebrow text-green-700">Questions</p>
+      <h2 class="font-display text-3xl md:text-4xl mt-4 leading-tight">Common questions</h2>
+    </div>
+    <div class="lg:col-span-8 border-t border-stone-300">
+      <details class="group border-b border-stone-300 py-5"><summary class="flex justify-between gap-6 cursor-pointer list-none font-semibold text-navy-900">Is my information kept confidential?<span class="text-stone-500 group-open:rotate-45 transition-transform">+</span></summary><p class="mt-3 text-stone-700 leading-relaxed">Yes. Submissions go only to our acquisitions team. We don't share them and we don't contact tenants without your approval.</p></details>
+      <details class="group border-b border-stone-300 py-5"><summary class="flex justify-between gap-6 cursor-pointer list-none font-semibold text-navy-900">Do you buy buildings with tenants in place?<span class="text-stone-500 group-open:rotate-45 transition-transform">+</span></summary><p class="mt-3 text-stone-700 leading-relaxed">Yes. Most of what we buy is occupied. Existing leases carry over and our in-house team takes over management at closing.</p></details>
+      <details class="group border-b border-stone-300 py-5"><summary class="flex justify-between gap-6 cursor-pointer list-none font-semibold text-navy-900">Do I need a broker to sell to you?<span class="text-stone-500 group-open:rotate-45 transition-transform">+</span></summary><p class="mt-3 text-stone-700 leading-relaxed">No. Many owners come to us directly. If you already have a broker, we're glad to work through them.</p></details>
+      <details class="group border-b border-stone-300 py-5"><summary class="flex justify-between gap-6 cursor-pointer list-none font-semibold text-navy-900">What if my property is outside your main markets?<span class="text-stone-500 group-open:rotate-45 transition-transform">+</span></summary><p class="mt-3 text-stone-700 leading-relaxed">Send it. Boston, the North Shore and Cape Cod are where we're most active, but we look at good buildings wherever they are.</p></details>
+      <details class="group border-b border-stone-300 py-5"><summary class="flex justify-between gap-6 cursor-pointer list-none font-semibold text-navy-900">Can the closing date work around my plans?<span class="text-stone-500 group-open:rotate-45 transition-transform">+</span></summary><p class="mt-3 text-stone-700 leading-relaxed">Usually, yes. Tell us what you need, whether that's a quick close or more time, and we'll build the offer around it.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEAL SUBMISSION CTA ============ -->
+<section id="submit" class="bg-navy-950 text-stone-50 relative overflow-hidden">
+  <div class="absolute inset-0 grid-lines opacity-60" aria-hidden="true"></div>
+  <div class="wrap relative py-20 md:py-28 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-5">
+      <p class="eyebrow text-green-300">Deal Submission</p>
+      <h2 class="font-display text-4xl md:text-5xl mt-4 leading-[1.1]">Have an off-market asset? <em class="text-brass-300 font-medium">Send it directly.</em></h2>
+      <p class="mt-6 text-stone-300 leading-relaxed">Submissions go straight to our acquisitions team. Share what you have; a rent roll and operating statement help us give you a real answer.</p>
+      <ol class="mt-10 space-y-5 text-sm">
+        <li class="flex gap-4"><span class="eyebrow text-green-300 pt-0.5">Step 1</span><span class="text-stone-300">Submit the address and basic details</span></li>
+        <li class="flex gap-4"><span class="eyebrow text-green-300 pt-0.5">Step 2</span><span class="text-stone-300">We review it and call you back</span></li>
+        <li class="flex gap-4"><span class="eyebrow text-green-300 pt-0.5">Step 3</span><span class="text-stone-300">Clear offer, clean terms, simple close</span></li>
+      </ol>
+    </div>
+    <form id="dealForm" class="lg:col-span-7 border border-white/10 bg-navy-900/80 p-6 md:p-10" novalidate data-endpoint="https://formsubmit.co/ajax/john@citicoreprops.com">
+      <input type="hidden" name="_subject" value="New deal submission (Acquisitions page) — citicoreprops.com">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+      <div class="grid sm:grid-cols-2 gap-x-8 gap-y-6">
+        <div>
+          <label for="f-role" class="eyebrow text-[0.62rem] text-stone-500">I am a</label>
+          <select id="f-role" name="role" class="field" required>
+            <option value="Owner">Property owner</option>
+            <option value="Broker">Broker</option>
+            <option value="Lender">Lender</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="f-type" class="eyebrow text-[0.62rem] text-stone-500">Asset type</label>
+          <select id="f-type" name="assetType" class="field">
+            <option>Multifamily</option>
+            <option>Mixed-use</option>
+            <option>Retail / Small-bay commercial</option>
+            <option>Office</option>
+            <option>Industrial / Flex</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="sm:col-span-2">
+          <label for="f-address" class="eyebrow text-[0.62rem] text-stone-500">Property address</label>
+          <input id="f-address" name="address" class="field" placeholder="Street, city, state" required autocomplete="off">
+        </div>
+        <div>
+          <label for="f-units" class="eyebrow text-[0.62rem] text-stone-500">Units / SF</label>
+          <input id="f-units" name="size" class="field num" placeholder="e.g. 12 units">
+        </div>
+        <div>
+          <label for="f-price" class="eyebrow text-[0.62rem] text-stone-500">Asking price (if known)</label>
+          <input id="f-price" name="price" class="field num" placeholder="e.g. $4,250,000">
+        </div>
+        <div>
+          <label for="f-name" class="eyebrow text-[0.62rem] text-stone-500">Full name</label>
+          <input id="f-name" name="name" class="field" required autocomplete="name">
+        </div>
+        <div>
+          <label for="f-email" class="eyebrow text-[0.62rem] text-stone-500">Email</label>
+          <input id="f-email" name="email" type="email" class="field" required autocomplete="email">
+        </div>
+        <div class="sm:col-span-2">
+          <label for="f-notes" class="eyebrow text-[0.62rem] text-stone-500">Notes</label>
+          <textarea id="f-notes" name="notes" rows="3" class="field resize-none" placeholder="Occupancy, in-place rents, timing, reason for sale"></textarea>
+        </div>
+      </div>
+      <div class="mt-9 flex flex-wrap items-center gap-5">
+        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 transition-colors">Submit Property</button>
+        <p class="text-xs text-stone-500 max-w-[18rem]">Confidential. Or call <span class="select-all num">(781) 670-5993</span>.</p>
+      </div>
+      <p id="formMsg" class="mt-6 text-sm" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+
+
+</main>
+
+
+<!-- ============ FOOTER ============ -->
+<footer id="contact" class="bg-navy-950 text-stone-300 border-t border-white/10">
+  <div class="wrap py-16 grid md:grid-cols-12 gap-10">
+    <div class="md:col-span-5">
+      <span class="logo2b" style="display:inline-block;line-height:1;color:#F5F6F7;text-align:center"><span style="display:block;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 125;font-weight:750;font-size:1.7rem;letter-spacing:.02em;white-space:nowrap"><svg style="display:inline-block;height:.686em;width:auto;vertical-align:baseline;margin-right:.06em;overflow:visible" viewBox="0 0 38 40" aria-hidden="true"><path fill="currentColor" d="M0 0h38v10H10v20h28v10H0z"/><rect x="17" y="18" width="9" height="22" fill="currentColor"/></svg>ITICORE</span><span style="display:block;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 125;font-weight:450;font-size:.5rem;letter-spacing:.62em;margin-top:.45em;padding-left:.62em">PROPERTIES</span></span>
+      <p class="mt-4 text-sm leading-relaxed max-w-[26rem]">Acquisition, development, management and brokerage of multifamily, mixed-use and commercial real estate in Massachusetts and southern New Hampshire. Brokerage services provided by Grove Property Group, a division of Citicore Properties Inc.</p>
+    </div>
+    <div class="md:col-span-3 text-sm">
+      <p class="eyebrow text-[0.62rem] text-stone-500">Office</p>
+      <address class="not-italic mt-3 leading-relaxed">423 West Broadway<br>South Boston, MA 02127</address>
+      <p class="eyebrow text-[0.62rem] text-stone-500 mt-6">Mailing</p>
+      <p class="mt-3">PO Box 2946<br>Woburn, MA 01888</p>
+      <p class="mt-6 flex gap-5"><a class="link-u" href="https://www.instagram.com/ccoreproperties/">Instagram</a><a class="link-u" href="https://www.facebook.com/profile.php?id=61565684049766">Facebook</a></p>
+    </div>
+    <div class="md:col-span-4 text-sm">
+      <p class="eyebrow text-[0.62rem] text-stone-500">Acquisitions &amp; Inquiries</p>
+      <p class="mt-3 select-all">john@citicoreprops.com</p>
+      <p class="eyebrow text-[0.62rem] text-stone-500 mt-6">Phone</p>
+      <p class="mt-3 select-all num">(781) 670-5993</p>
+    </div>
+  </div>
+  <div class="wrap py-6 border-t border-white/10 flex flex-wrap justify-between gap-4 text-xs text-stone-500">
+    <p>© <span id="yr">2026</span> Citicore Properties Inc. All rights reserved.</p>
+    <p>This site does not constitute an offer to sell or a solicitation of an offer to buy any security.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Mobile menu
+  var btn = document.getElementById('menuBtn'), nav = document.getElementById('mobileNav');
+  btn.addEventListener('click', function () {
+    var open = nav.hidden; nav.hidden = !open; btn.setAttribute('aria-expanded', String(open));
+  });
+  nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { nav.hidden = true; btn.setAttribute('aria-expanded', 'false'); }); });
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Deal form — live build posts to FormSubmit (emails john@citicoreprops.com); preview build has no endpoint
+  var form = document.getElementById('dealForm'), msg = document.getElementById('formMsg');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var missing = ['f-address', 'f-name', 'f-email'].filter(function (id) { return !document.getElementById(id).value.trim(); });
+    var email = document.getElementById('f-email').value;
+    if (missing.length) { msg.className = 'mt-6 text-sm text-brass-300'; msg.textContent = 'Add the property address, your name and email to submit.'; document.getElementById(missing[0]).focus(); return; }
+    if (!/^\S+@\S+\.\S+$/.test(email)) { msg.className = 'mt-6 text-sm text-brass-300'; msg.textContent = 'Enter a valid email address.'; document.getElementById('f-email').focus(); return; }
+    var endpoint = form.getAttribute('data-endpoint'); if (endpoint === 'FORM' + '_ENDPOINT') endpoint = '';
+    if (!endpoint) { msg.className = 'mt-6 text-sm text-stone-300'; msg.textContent = 'Preview mode: the form is not connected yet, so nothing was sent.'; return; }
+    var btn = form.querySelector('button[type=submit]'); btn.disabled = true;
+    var payload = {}; new FormData(form).forEach(function (v, k) { payload[k] = v; });
+    fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(payload) })
+      .then(function (r) { return r.json().then(function (d) { if (!r.ok || String(d.success) !== 'true') throw 0; }); })
+      .then(function () { form.reset(); msg.className = 'mt-6 text-sm text-green-300'; msg.textContent = 'Received. Our acquisitions team will be in touch shortly.'; })
+      .catch(function () { msg.className = 'mt-6 text-sm text-brass-300'; msg.textContent = 'That did not go through. Email john@citicoreprops.com or call (781) 670-5993.'; })
+      .then(function () { btn.disabled = false; });
+  });
+})();
+</script>
+
+</body>
+</html>
