@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Invest in Citicore Properties projects: value-add multifamily, renovations and ground-up development across Massachusetts and southern New Hampshire. Direct access to the principal on every deal.">
+<link rel="icon" type="image/png" sizes="32x32" href="images/citicore-icon-32.png">
+<link rel="apple-touch-icon" href="images/citicore-icon-180.png">
+<meta property="og:title" content="Investments | Citicore Properties">
+<meta property="og:description" content="Acquisitions, management and brokerage across Massachusetts and southern New Hampshire.">
+<meta property="og:image" content="https://citicoreprops.com/images/citicore-social-share.png">
+<meta property="og:url" content="https://citicoreprops.com/investments">
+<meta name="twitter:card" content="summary_large_image">
+<title>Investments | Citicore Properties</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Archivo:wdth,wght@100..125,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { 950: '#131B24', 900: '#1A2430', 800: '#23303E', 700: '#33424F' },
+          stone: { 50: '#FFFFFF', 100: '#F2F4F7', 300: '#D8DEE5', 500: '#66707C', 700: '#3B4550' },
+          brass: { 300: '#A7B4C2', 400: '#E6EAEF', 500: '#FFFFFF', 600: '#1A2430' },
+          steel: { 400: '#8A95A1', 500: '#66707C' },
+          // "green" token = the blue accent (rename when componentized)
+          green: { 300: '#9DBDE0', 600: '#2E6096', 700: '#234C78' }
+        },
+        fontFamily: {
+          display: ['Outfit', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
+          mono: ['"IBM Plex Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace']
+        },
+        maxWidth: { site: '76rem' }
+      }
+    }
+  }
+</script>
+<style>
+  :root { color-scheme: light; }
+  html { scroll-behavior: smooth; }
+  body { background: #FFFFFF; color: #1A2430; font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 16px; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  .font-display { font-weight: 600; letter-spacing: -0.02em; }
+  h1.font-display { font-weight: 700; letter-spacing: -0.03em; }
+  .font-display em { font-style: normal; }
+  .eyebrow { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; }
+  .num { font-variant-numeric: tabular-nums lining-nums; }
+  .wrap { max-width: 76rem; margin-inline: auto; padding-inline: 1.25rem; }
+  @media (min-width: 768px) { .wrap { padding-inline: 2.5rem; } }
+  .site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40; }
+  .grid-lines { background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 64px 64px; }
+  .link-u { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size .3s ease; }
+  .link-u:hover, .link-u:focus-visible { background-size: 100% 1px; }
+  .pillar { transition: background-color .3s ease, border-color .3s ease; }
+  .pillar:hover { background-color: #fff; border-color: #111111; }
+  .pillar .arrow { transition: transform .3s ease; }
+  .pillar:hover .arrow { transform: translateX(4px); }
+  .asset-card .elev { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+  .asset-card:hover .elev { transform: scale(1.03); }
+  :focus-visible { outline: 2px solid #8A8A8A; outline-offset: 3px; }
+  .field { width: 100%; background: transparent; border: 0; border-bottom: 1px solid rgba(201,206,214,.35); color: #FFFFFF; padding: .7rem 0; font-size: .95rem; border-radius: 0; }
+  .field::placeholder { color: #8A8A8A; }
+  .field:focus { outline: none; border-bottom-color: #FFFFFF; }
+  select.field option { color: #111111; }
+  .rise { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
+  .rise-2 { animation-delay: .12s; } .rise-3 { animation-delay: .24s; } .rise-4 { animation-delay: .36s; }
+  @keyframes rise { from { transform: translateY(14px); } to { transform: none; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+<!-- ============ HEADER ============ -->
+<header class="site-header bg-navy-950/95 backdrop-blur border-b border-white/10">
+  <div class="wrap flex items-center justify-between h-16 md:h-20">
+    <a href="/" class="flex items-center shrink-0" aria-label="Citicore Properties home">
+      <span class="logo2b" style="display:inline-block;line-height:1;color:#F5F6F7;text-align:center"><span style="display:block;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 125;font-weight:750;font-size:1.25rem;letter-spacing:.02em;white-space:nowrap"><svg style="display:inline-block;height:.686em;width:auto;vertical-align:baseline;margin-right:.06em;overflow:visible" viewBox="0 0 38 40" aria-hidden="true"><path fill="currentColor" d="M0 0h38v10H10v20h28v10H0z"/><rect x="17" y="18" width="9" height="22" fill="currentColor"/></svg>ITICORE</span><span style="display:block;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 125;font-weight:450;font-size:.4rem;letter-spacing:.62em;margin-top:.45em;padding-left:.62em">PROPERTIES</span></span>
+    </a>
+    <nav aria-label="Primary" class="hidden lg:flex items-center gap-6 text-sm text-stone-300">
+      <a href="/acquisitions" class="link-u hover:text-stone-50">Acquisitions</a>
+      <a href="/development" class="link-u hover:text-stone-50">Development</a>
+        <a href="/investments" class="text-stone-50" aria-current="page">Investments</a>
+      <a href="/#management" class="link-u hover:text-stone-50">Management</a>
+      <a href="/#brokerage" class="link-u hover:text-stone-50">Brokerage</a>
+      <a href="/#portfolio" class="link-u hover:text-stone-50">Projects</a>
+      <a href="/#team" class="link-u hover:text-stone-50">Team</a>
+      <a href="#contact" class="link-u hover:text-stone-50">Contact</a>
+    </nav>
+    <a href="#submit" class="hidden sm:inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold px-5 py-2.5 transition-colors">Submit a Deal</a>
+    <button id="menuBtn" class="lg:hidden text-stone-50 p-2 -mr-2" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+    </button>
+  </div>
+  <nav id="mobileNav" aria-label="Mobile" class="lg:hidden border-t border-white/10 bg-navy-950" hidden>
+    <div class="wrap py-4 flex flex-col text-stone-100">
+      <a href="/acquisitions" class="py-3 border-b border-white/5">Acquisitions</a>
+      <a href="/development" class="py-3 border-b border-white/5">Development</a>
+        <a href="/investments" class="py-3 border-b border-white/5">Investments</a>
+      <a href="/#management" class="py-3 border-b border-white/5">Management</a>
+      <a href="/#brokerage" class="py-3 border-b border-white/5">Brokerage</a>
+      <a href="/#portfolio" class="py-3 border-b border-white/5">Projects</a>
+      <a href="/#team" class="py-3 border-b border-white/5">Team</a>
+      <a href="#contact" class="py-3 border-b border-white/5">Contact</a>
+      <a href="#submit" class="mt-4 bg-green-600 text-white font-semibold text-center py-3">Submit a Deal</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="relative bg-navy-900 text-stone-50 overflow-hidden">
+  <div class="absolute inset-0 grid-lines" aria-hidden="true"></div>
+  <div class="wrap relative pt-16 pb-16 md:pt-24 md:pb-20 grid lg:grid-cols-12 gap-12 items-end">
+    <div class="lg:col-span-8">
+      <p class="eyebrow text-green-300 rise">Investments</p>
+      <h1 class="font-display text-[2.5rem] leading-[1.05] sm:text-6xl mt-6 rise rise-2">Invest in the projects<br><em class="text-brass-300 font-medium">we buy, build and run.</em></h1>
+      <p class="mt-7 text-lg text-stone-300 max-w-[38rem] leading-relaxed rise rise-3">On select projects, Citicore brings in private investors alongside our own capital &mdash; value-add multifamily, renovations and ground-up development across Massachusetts and southern New Hampshire. You deal directly with the principal. No layers, no pitch decks with stock photos.</p>
+      <div class="mt-10 flex flex-wrap gap-4 rise rise-4">
+        <a href="#contact-john" class="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white font-semibold px-7 py-4 transition-colors">Contact John
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="tel:+17816705993" class="inline-flex items-center gap-3 border border-white/25 hover:border-green-300 text-stone-50 px-7 py-4 transition-colors num">Call (781) 670-5993</a>
+      </div>
+    </div>
+    <nav aria-label="On this page" class="lg:col-span-4 hidden lg:block border-l border-white/10 pl-8 text-sm rise rise-3">
+      <p class="eyebrow text-[0.62rem] text-stone-500">On this page</p>
+      <ul class="mt-4 space-y-3 text-stone-300">
+        <li><a class="link-u hover:text-stone-50" href="#projects">What you invest in</a></li>
+        <li><a class="link-u hover:text-stone-50" href="#process">How it works</a></li>
+        <li><a class="link-u hover:text-stone-50" href="#why">Why Citicore</a></li>
+        <li><a class="link-u hover:text-stone-50" href="#faq">Questions</a></li>
+        <li><a class="link-u hover:text-stone-50" href="#contact-john">Contact John</a></li>
+      </ul>
+    </nav>
+  </div>
+</section>
+
+<!-- ============ WHAT YOU INVEST IN ============ -->
+<section id="projects" class="bg-stone-50">
+  <div class="wrap py-20 md:py-24 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <p class="eyebrow text-green-700">The Projects</p>
+      <h2 class="font-display text-3xl md:text-4xl mt-4 leading-tight">What you invest in</h2>
+      <p class="mt-5 text-stone-700 leading-relaxed max-w-[26rem]">The same deals we underwrite for ourselves. If we wouldn't put our own money in, it doesn't get offered.</p>
+    </div>
+    <dl class="lg:col-span-8 border-t border-stone-300">
+      <div class="grid sm:grid-cols-3 gap-2 sm:gap-8 py-6 border-b border-stone-300">
+        <dt class="eyebrow text-[0.62rem] text-stone-500 pt-1">Value-add multifamily</dt>
+        <dd class="sm:col-span-2 text-navy-900 leading-relaxed">Apartment buildings bought below their potential &mdash; renovate the units, run them properly, hold for income. The core of the portfolio.</dd>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-2 sm:gap-8 py-6 border-b border-stone-300">
+        <dt class="eyebrow text-[0.62rem] text-stone-500 pt-1">Renovation &amp; repositioning</dt>
+        <dd class="sm:col-span-2 text-navy-900 leading-relaxed">Dated properties in strong neighborhoods, improved and re-tenanted &mdash; or prepared for sale through our brokerage arm, Grove Property Group.</dd>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-2 sm:gap-8 py-6 border-b border-stone-300">
+        <dt class="eyebrow text-[0.62rem] text-stone-500 pt-1">Ground-up development</dt>
+        <dd class="sm:col-span-2 text-navy-900 leading-relaxed">New single-family construction in towns where finished homes sell for $2 million and up. See our <a class="link-u text-green-700 font-semibold" href="/development">Development</a> page for where and what we build.</dd>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-2 sm:gap-8 py-6 border-b border-stone-300">
+        <dt class="eyebrow text-[0.62rem] text-stone-500 pt-1">Geography</dt>
+        <dd class="sm:col-span-2 text-navy-900 leading-relaxed">Massachusetts and southern New Hampshire &mdash; Boston and the North Shore, the Merrimack Valley, the Seacoast, and Cape Cod. Markets we live in and work in every day.</dd>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-2 sm:gap-8 py-6 border-b border-stone-300">
+        <dt class="eyebrow text-[0.62rem] text-stone-500 pt-1">Alignment</dt>
+        <dd class="sm:col-span-2 text-navy-900 leading-relaxed">Citicore invests its own capital in every project it offers. Same deal, same terms, same outcome.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section id="process" class="bg-stone-100 border-y border-stone-300/60">
+  <div class="wrap py-20 md:py-24">
+    <p class="eyebrow text-green-700">Process</p>
+    <h2 class="font-display text-3xl md:text-4xl mt-4 max-w-[36rem] leading-tight">How it works</h2>
+    <ol class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-stone-300">
+      <li class="border-r border-b border-stone-300 p-7 bg-stone-100">
+        <p class="eyebrow text-green-700 text-[0.62rem]">Step 1</p>
+        <h3 class="font-display text-xl mt-4">Start with a conversation</h3>
+        <p class="mt-3 text-sm text-stone-700 leading-relaxed">Use the contact button below. Tell John what you're looking for &mdash; income, growth, timeline &mdash; and what questions you have. No obligation either way.</p>
+      </li>
+      <li class="border-r border-b border-stone-300 p-7 bg-stone-100">
+        <p class="eyebrow text-green-700 text-[0.62rem]">Step 2</p>
+        <h3 class="font-display text-xl mt-4">See the actual deal</h3>
+        <p class="mt-3 text-sm text-stone-700 leading-relaxed">When a project fits, you get the real underwriting: purchase price, renovation or construction budget, rents, and how the money comes back. The same numbers we use ourselves.</p>
+      </li>
+      <li class="border-r border-b border-stone-300 p-7 bg-stone-100">
+        <p class="eyebrow text-green-700 text-[0.62rem]">Step 3</p>
+        <h3 class="font-display text-xl mt-4">Invest, project by project</h3>
+        <p class="mt-3 text-sm text-stone-700 leading-relaxed">Each project is structured on its own, with the terms in writing before any money moves. You choose deal by deal &mdash; nothing is automatic.</p>
+      </li>
+      <li class="border-r border-b border-stone-300 p-7 bg-stone-100">
+        <p class="eyebrow text-green-700 text-[0.62rem]">Step 4</p>
+        <h3 class="font-display text-xl mt-4">Stay close to it</h3>
+        <p class="mt-3 text-sm text-stone-700 leading-relaxed">Regular updates as the project runs &mdash; construction progress, leasing, financials &mdash; and a direct line to John the whole way through.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ WHY CITICORE ============ -->
+<section id="why" class="bg-stone-50">
+  <div class="wrap py-20 md:py-24 grid lg:grid-cols-2 gap-16">
+    <div>
+      <p class="eyebrow text-green-700">Why Citicore</p>
+      <h2 class="font-display text-3xl mt-4 leading-tight">One team from first call to stabilized asset</h2>
+      <p class="mt-5 text-stone-700 leading-relaxed">Acquisitions, construction, management and brokerage run under one roof. The people who underwrite the deal are the people who close it, build it and operate it &mdash; so there's nowhere for a problem to hide, and no one else to call.</p>
+      <ul class="mt-8 space-y-5 text-navy-900">
+        <li class="flex gap-4"><span class="mt-2 h-1.5 w-1.5 bg-green-600 shrink-0"></span><span>Our own capital in every project, alongside yours.</span></li>
+        <li class="flex gap-4"><span class="mt-2 h-1.5 w-1.5 bg-green-600 shrink-0"></span><span>In-house management &mdash; investor returns aren't eaten by third-party layers.</span></li>
+        <li class="flex gap-4"><span class="mt-2 h-1.5 w-1.5 bg-green-600 shrink-0"></span><span>Deal flow from our own brokerage, Grove Property Group, before most of it is public.</span></li>
+        <li class="flex gap-4"><span class="mt-2 h-1.5 w-1.5 bg-green-600 shrink-0"></span><span>A direct line to the principal. You will never talk to an investor-relations department.</span></li>
+      </ul>
+    </div>
+    <div class="lg:border-l lg:border-stone-300 lg:pl-16">
+      <p class="eyebrow text-green-700">Track Record</p>
+      <h2 class="font-display text-3xl mt-4 leading-tight">Buildings we've owned and improved</h2>
+      <div class="mt-8 grid grid-cols-2 gap-5">
+        <figure><img src="images/633-e6.jpg" alt="East 6th Street, South Boston" loading="lazy" class="block w-full aspect-[4/3] object-cover"><figcaption class="mt-2 flex justify-between text-sm"><span>East 6th Street</span><span class="eyebrow text-[0.6rem] text-green-700 pt-1">Owned</span></figcaption></figure>
+        <figure><img src="images/206-l.jpg" alt="L Street, South Boston" loading="lazy" class="block w-full aspect-[4/3] object-cover"><figcaption class="mt-2 flex justify-between text-sm"><span>L Street</span><span class="eyebrow text-[0.6rem] text-green-700 pt-1">Owned</span></figcaption></figure>
+        <figure><img src="images/397-after.jpg" alt="West 4th Street, South Boston" loading="lazy" class="block w-full aspect-[4/3] object-cover"><figcaption class="mt-2 flex justify-between text-sm"><span>West 4th Street</span><span class="eyebrow text-[0.6rem] text-stone-500 pt-1">Sold</span></figcaption></figure>
+        <figure><img src="images/726-e2.jpg" alt="East 2nd Street, South Boston" loading="lazy" class="block w-full aspect-[4/3] object-cover"><figcaption class="mt-2 flex justify-between text-sm"><span>East 2nd Street</span><span class="eyebrow text-[0.6rem] text-stone-500 pt-1">Sold</span></figcaption></figure>
+      </div>
+      <p class="mt-6 text-sm"><a href="/#portfolio" class="font-semibold text-green-700 link-u">See all projects &rarr;</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="bg-stone-100 border-y border-stone-300/60">
+  <div class="wrap py-20 md:py-24 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <p class="eyebrow text-green-700">Questions</p>
+      <h2 class="font-display text-3xl md:text-4xl mt-4 leading-tight">Common questions</h2>
+    </div>
+    <div class="lg:col-span-8 border-t border-stone-300">
+      <details class="group border-b border-stone-300 py-5"><summary class="flex justify-between gap-6 cursor-pointer list-none font-semibold text-navy-900">How do I hear about projects?<span class="text-stone-500 group-open:rotate-45 transition-transform">+</span></summary><p class="mt-3 text-stone-700 leading-relaxed">Start with the contact button below. Once John knows what you're looking for, fitting projects come to you directly as they're underwritten &mdash; before they're spoken for.</p></details>
+      <details class="group border-b border-stone-300 py-5"><summary class="flex justify-between gap-6 cursor-pointer list-none font-semibold text-navy-900">What does a typical investment look like?<span class="text-stone-500 group-open:rotate-45 transition-transform">+</span></summary><p class="mt-3 text-stone-700 leading-relaxed">It varies by project &mdash; the size, structure and timeline of a multifamily hold are different from a ground-up build. Every opportunity is presented with its own numbers and terms in writing, and the conversation with John is where the specifics get covered.</p></details>
+      <details class="group border-b border-stone-300 py-5"><summary class="flex justify-between gap-6 cursor-pointer list-none font-semibold text-navy-900">Do you invest your own money too?<span class="text-stone-500 group-open:rotate-45 transition-transform">+</span></summary><p class="mt-3 text-stone-700 leading-relaxed">Yes. Citicore puts its own capital into every project it offers investors. If a deal isn't good enough for our money, it isn't offered for yours.</p></details>
+      <details class="group border-b border-stone-300 py-5"><summary class="flex justify-between gap-6 cursor-pointer list-none font-semibold text-navy-900">How will I know how my investment is doing?<span class="text-stone-500 group-open:rotate-45 transition-transform">+</span></summary><p class="mt-3 text-stone-700 leading-relaxed">With regular project updates &mdash; progress, leasing and financials &mdash; and a standing direct line to John. These are local projects; you're welcome to drive by them.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT JOHN ============ -->
+<section id="contact-john" class="bg-navy-950 text-stone-50 relative overflow-hidden">
+  <div class="absolute inset-0 grid-lines opacity-60" aria-hidden="true"></div>
+  <div class="wrap relative py-20 md:py-28 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-5">
+      <p class="eyebrow text-green-300">Investor Contact</p>
+      <h2 class="font-display text-4xl md:text-5xl mt-4 leading-[1.1]">Interested in a project? <em class="text-brass-300 font-medium">Talk to John directly.</em></h2>
+      <p class="mt-6 text-stone-300 leading-relaxed">Tell him what you're looking for and he'll tell you plainly whether anything current fits &mdash; and put you on the list for what comes next if it doesn't.</p>
+      <ol class="mt-10 space-y-5 text-sm">
+        <li class="flex gap-4"><span class="eyebrow text-green-300 pt-0.5">Step 1</span><span class="text-stone-300">Send the form, or call (781) 670-5993</span></li>
+        <li class="flex gap-4"><span class="eyebrow text-green-300 pt-0.5">Step 2</span><span class="text-stone-300">A short conversation with John &mdash; your goals, his current pipeline</span></li>
+        <li class="flex gap-4"><span class="eyebrow text-green-300 pt-0.5">Step 3</span><span class="text-stone-300">Fitting projects come to you first, with full numbers</span></li>
+      </ol>
+    </div>
+    <form id="dealForm" class="lg:col-span-7 border border-white/10 bg-navy-900/80 p-6 md:p-10" novalidate data-endpoint="https://formsubmit.co/ajax/john@citicoreprops.com">
+      <input type="hidden" name="_subject" value="New investor inquiry (Investments page) &#8212; citicoreprops.com">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+      <div class="grid sm:grid-cols-2 gap-x-8 gap-y-6">
+        <div>
+          <label for="f-name" class="eyebrow text-[0.62rem] text-stone-500">Full name</label>
+          <input id="f-name" name="name" class="field" required autocomplete="name">
+        </div>
+        <div>
+          <label for="f-email" class="eyebrow text-[0.62rem] text-stone-500">Email</label>
+          <input id="f-email" name="email" type="email" class="field" required autocomplete="email">
+        </div>
+        <div>
+          <label for="f-phone" class="eyebrow text-[0.62rem] text-stone-500">Phone</label>
+          <input id="f-phone" name="phone" type="tel" class="field num" autocomplete="tel">
+        </div>
+        <div>
+          <label for="f-range" class="eyebrow text-[0.62rem] text-stone-500">Investment range</label>
+          <select id="f-range" name="range" class="field">
+            <option>Under $100,000</option>
+            <option>$100,000 &ndash; $250,000</option>
+            <option>$250,000 &ndash; $500,000</option>
+            <option>$500,000 &ndash; $1,000,000</option>
+            <option>Over $1,000,000</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="sm:col-span-2">
+          <label for="f-interest" class="eyebrow text-[0.62rem] text-stone-500">I'm interested in</label>
+          <select id="f-interest" name="interest" class="field">
+            <option>Any project that fits</option>
+            <option>Value-add multifamily (income)</option>
+            <option>Renovation &amp; repositioning</option>
+            <option>Ground-up development</option>
+          </select>
+        </div>
+        <div class="sm:col-span-2">
+          <label for="f-notes" class="eyebrow text-[0.62rem] text-stone-500">Anything John should know</label>
+          <textarea id="f-notes" name="notes" rows="3" class="field resize-none" placeholder="Goals, timeline, questions"></textarea>
+        </div>
+      </div>
+      <div class="mt-9 flex flex-wrap items-center gap-5">
+        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 transition-colors">Contact John</button>
+        <p class="text-xs text-stone-500 max-w-[18rem]">Confidential. Goes directly to John &mdash; no list, no sales team.</p>
+      </div>
+      <p id="formMsg" class="mt-6 text-sm" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+  <div class="wrap relative pb-14">
+    <p class="text-xs text-stone-500 leading-relaxed max-w-[52rem]">This page is informational only and is not an offer to sell or a solicitation to buy any security. Any investment opportunity is extended privately, project by project, to individuals with whom Citicore has a pre-existing relationship, under written terms provided at that time.</p>
+  </div>
+</section>
+
+
+
+</main>
+
+
+<!-- ============ FOOTER ============ -->
+<footer id="contact" class="bg-navy-950 text-stone-300 border-t border-white/10">
+  <div class="wrap py-16 grid md:grid-cols-12 gap-10">
+    <div class="md:col-span-5">
+      <span class="logo2b" style="display:inline-block;line-height:1;color:#F5F6F7;text-align:center"><span style="display:block;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 125;font-weight:750;font-size:1.7rem;letter-spacing:.02em;white-space:nowrap"><svg style="display:inline-block;height:.686em;width:auto;vertical-align:baseline;margin-right:.06em;overflow:visible" viewBox="0 0 38 40" aria-hidden="true"><path fill="currentColor" d="M0 0h38v10H10v20h28v10H0z"/><rect x="17" y="18" width="9" height="22" fill="currentColor"/></svg>ITICORE</span><span style="display:block;font-family:Archivo,sans-serif;font-variation-settings:'wdth' 125;font-weight:450;font-size:.5rem;letter-spacing:.62em;margin-top:.45em;padding-left:.62em">PROPERTIES</span></span>
+      <p class="mt-4 text-sm leading-relaxed max-w-[26rem]">Acquisition, development, management and brokerage of multifamily, mixed-use and commercial real estate in Massachusetts and southern New Hampshire. Brokerage services provided by Grove Property Group, a division of Citicore Properties Inc.</p>
+    </div>
+    <div class="md:col-span-3 text-sm">
+      <p class="eyebrow text-[0.62rem] text-stone-500">Office</p>
+      <address class="not-italic mt-3 leading-relaxed">423 West Broadway<br>South Boston, MA 02127</address>
+      <p class="eyebrow text-[0.62rem] text-stone-500 mt-6">Mailing</p>
+      <p class="mt-3">PO Box 2946<br>Woburn, MA 01888</p>
+      <p class="mt-6 flex gap-5"><a class="link-u" href="https://www.instagram.com/ccoreproperties/">Instagram</a><a class="link-u" href="https://www.facebook.com/profile.php?id=61565684049766">Facebook</a></p>
+    </div>
+    <div class="md:col-span-4 text-sm">
+      <p class="eyebrow text-[0.62rem] text-stone-500">Acquisitions &amp; Inquiries</p>
+      <p class="mt-3 select-all">john@citicoreprops.com</p>
+      <p class="eyebrow text-[0.62rem] text-stone-500 mt-6">Phone</p>
+      <p class="mt-3 select-all num">(781) 670-5993</p>
+    </div>
+  </div>
+  <div class="wrap py-6 border-t border-white/10 flex flex-wrap justify-between gap-4 text-xs text-stone-500">
+    <p>© <span id="yr">2026</span> Citicore Properties Inc. All rights reserved.</p>
+    <p>This site does not constitute an offer to sell or a solicitation of an offer to buy any security.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Mobile menu
+  var btn = document.getElementById('menuBtn'), nav = document.getElementById('mobileNav');
+  btn.addEventListener('click', function () {
+    var open = nav.hidden; nav.hidden = !open; btn.setAttribute('aria-expanded', String(open));
+  });
+  nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { nav.hidden = true; btn.setAttribute('aria-expanded', 'false'); }); });
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Deal form — live build posts to FormSubmit (emails john@citicoreprops.com); preview build has no endpoint
+  var form = document.getElementById('dealForm'), msg = document.getElementById('formMsg');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var missing = ['f-address', 'f-name', 'f-email'].filter(function (id) { return !document.getElementById(id).value.trim(); });
+    var email = document.getElementById('f-email').value;
+    if (missing.length) { msg.className = 'mt-6 text-sm text-brass-300'; msg.textContent = 'Add the property address, your name and email to submit.'; document.getElementById(missing[0]).focus(); return; }
+    if (!/^\S+@\S+\.\S+$/.test(email)) { msg.className = 'mt-6 text-sm text-brass-300'; msg.textContent = 'Enter a valid email address.'; document.getElementById('f-email').focus(); return; }
+    var endpoint = form.getAttribute('data-endpoint'); if (endpoint === 'FORM' + '_ENDPOINT') endpoint = '';
+    if (!endpoint) { msg.className = 'mt-6 text-sm text-stone-300'; msg.textContent = 'Preview mode: the form is not connected yet, so nothing was sent.'; return; }
+    var btn = form.querySelector('button[type=submit]'); btn.disabled = true;
+    var payload = {}; new FormData(form).forEach(function (v, k) { payload[k] = v; });
+    fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(payload) })
+      .then(function (r) { return r.json().then(function (d) { if (!r.ok || String(d.success) !== 'true') throw 0; }); })
+      .then(function () { form.reset(); msg.className = 'mt-6 text-sm text-green-300'; msg.textContent = 'Received. Our acquisitions team will be in touch shortly.'; })
+      .catch(function () { msg.className = 'mt-6 text-sm text-brass-300'; msg.textContent = 'That did not go through. Email john@citicoreprops.com or call (781) 670-5993.'; })
+      .then(function () { btn.disabled = false; });
+  });
+})();
+</script>
+
+</body>
+</html>
