@@ -15,29 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Archivo:wdth,wght@100..125,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          navy: { 950: '#131B24', 900: '#1A2430', 800: '#23303E', 700: '#33424F' },
-          stone: { 50: '#FFFFFF', 100: '#F2F4F7', 300: '#D8DEE5', 500: '#66707C', 700: '#3B4550' },
-          brass: { 300: '#A7B4C2', 400: '#E6EAEF', 500: '#FFFFFF', 600: '#1A2430' },
-          steel: { 400: '#8A95A1', 500: '#66707C' },
-          // "green" token = the blue accent (rename when componentized)
-          green: { 300: '#9DBDE0', 600: '#2E6096', 700: '#234C78' }
-        },
-        fontFamily: {
-          display: ['Outfit', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-          sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
-          mono: ['"IBM Plex Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace']
-        },
-        maxWidth: { site: '76rem' }
-      }
-    }
-  }
-</script>
+<link rel="stylesheet" href="/styles.css">
 <style>
   :root { color-scheme: light; }
   html { scroll-behavior: smooth; }
@@ -70,6 +48,8 @@
   @keyframes rise { from { transform: translateY(14px); } to { transform: none; } }
   @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
 </style>
+  <link rel="canonical" href="https://citicoreprops.com/development">
+  <!--GA4-->
 </head>
 <body>
 <!-- ============ HEADER ============ -->
@@ -82,8 +62,8 @@
       <a href="/acquisitions" class="link-u hover:text-stone-50">Acquisitions</a>
         <a href="/development" class="text-stone-50" aria-current="page">Development</a>
         <a href="/investments" class="link-u hover:text-stone-50">Investments</a>
-      <a href="/#management" class="link-u hover:text-stone-50">Management</a>
-      <a href="/#brokerage" class="link-u hover:text-stone-50">Brokerage</a>
+      <a href="/management" class="link-u hover:text-stone-50">Management</a>
+      <a href="/brokerage" class="link-u hover:text-stone-50">Brokerage</a>
       <a href="/#portfolio" class="link-u hover:text-stone-50">Projects</a>
       <a href="/#team" class="link-u hover:text-stone-50">Team</a>
       <a href="#contact" class="link-u hover:text-stone-50">Contact</a>
@@ -98,8 +78,8 @@
       <a href="/acquisitions" class="py-3 border-b border-white/5">Acquisitions</a>
         <a href="/development" class="py-3 border-b border-white/5">Development</a>
         <a href="/investments" class="py-3 border-b border-white/5">Investments</a>
-      <a href="/#management" class="py-3 border-b border-white/5">Management</a>
-      <a href="/#brokerage" class="py-3 border-b border-white/5">Brokerage</a>
+      <a href="/management" class="py-3 border-b border-white/5">Management</a>
+      <a href="/brokerage" class="py-3 border-b border-white/5">Brokerage</a>
       <a href="/#portfolio" class="py-3 border-b border-white/5">Projects</a>
       <a href="/#team" class="py-3 border-b border-white/5">Team</a>
       <a href="#contact" class="py-3 border-b border-white/5">Contact</a>
@@ -134,6 +114,13 @@
         <li><a class="link-u hover:text-stone-50" href="#faq">Questions</a></li>
       </ul>
     </nav>
+  </div>
+</section>
+
+<!-- ============ PHOTO BAND ============ -->
+<section class="bg-stone-50">
+  <div class="wrap pt-14 md:pt-20">
+    <img src="images/new-build-hero.jpg" alt="A newly built single-family home" class="block w-full aspect-[16/8] object-cover" loading="lazy">
   </div>
 </section>
 
@@ -345,7 +332,7 @@
       <p class="eyebrow text-[0.62rem] text-stone-500">Acquisitions &amp; Inquiries</p>
       <p class="mt-3 select-all">john@citicoreprops.com</p>
       <p class="eyebrow text-[0.62rem] text-stone-500 mt-6">Phone</p>
-      <p class="mt-3 select-all num">(781) 670-5993</p>
+      <p class="mt-3"><a href="tel:+17816705993" class="select-all num link-u">(781) 670-5993</a></p>
     </div>
   </div>
   <div class="wrap py-6 border-t border-white/10 flex flex-wrap justify-between gap-4 text-xs text-stone-500">

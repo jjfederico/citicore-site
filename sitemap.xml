@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://citicoreprops.com/</loc><lastmod>2026-09-27</lastmod></url>
-  <url><loc>https://citicoreprops.com/acquisitions</loc><lastmod>2026-09-27</lastmod></url>
-  <url><loc>https://citicoreprops.com/development</loc></url>
-  <url><loc>https://citicoreprops.com/investments</loc></url>
+  <url><loc>https://citicoreprops.com/</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://citicoreprops.com/acquisitions</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://citicoreprops.com/development</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://citicoreprops.com/investments</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://citicoreprops.com/management</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://citicoreprops.com/brokerage</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://citicoreprops.com/privacy</loc><lastmod>2026-11-03</lastmod></url>
 </urlset>
